@@ -1,3 +1,8 @@
+from pyspark.sql import SparkSession
+
+# .master to report stats on the web UI
+spark = SparkSession.builder.appName("SparkRank").master("spark://c220g5-111023vm-1.wisc.cloudlab.us:7077").getOrCreate()
+
 hdfs_file_path = "hdfs://10.10.1.1:9000/web-BerkStan.txt"
 textDf = spark.read.text(hdfs_file_path)
 
@@ -52,5 +57,5 @@ for iteration in range(10):
 
 # Collects all URL ranks
 for (link, rank) in sorted(ranks.collect()):
-    print("%s has rank: %s." % (link, rank / len(total_pages)))
+    print("%s has rank: %s." % (link, rank / total_pages))
 
