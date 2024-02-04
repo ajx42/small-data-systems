@@ -80,10 +80,10 @@ if DEBUG:
         print("%s has rank: %s." % (link, rank / total_pages))
 
 # If we are not saving to file, this operation will ensure all computation has finished
-total_results = ranks.count()
+# total_results = ranks.count()
 
 # Print to file?
-# ranks.take(1).saveAsTextFile(HDFS_OUTPUT_PATH)
+ranks.saveAsTextFile(HDFS_OUTPUT_PATH)
 
 #samples = ranks.takeSample(False, 1000)
 #data_to_write = "\n".join(map(str, taken_elements))
