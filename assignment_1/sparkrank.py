@@ -32,10 +32,6 @@ else:
 
 procDataInt = procData.map(lambda x: (x[0], x[1]))
 
-# get list of all vertices
-uniq = procDataInt.flatMap(lambda x: [x[0], x[1]]).distinct()
-uniqData = uniq.map(lambda x: (x, 0))
-
 # adj list from edge list
 grpData = procDataInt.groupByKey()
 
