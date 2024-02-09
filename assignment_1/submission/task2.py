@@ -1,12 +1,12 @@
 from pyspark.sql import SparkSession
 from operator import add
-
+import sys
 
 
 ### USER CONFIGURATION ###
-
+# Based on value passed from the run_task2.sh script
 # Set number of partitions for this task.
-NUM_PARTITIONS = 105
+NUM_PARTITIONS = int(sys.argv[1])
 
 # Provide an application name. Note that results are saved in result_{APP_NAME} directory.
 APP_NAME = "Task-2-Partitions-{}".format(NUM_PARTITIONS)
