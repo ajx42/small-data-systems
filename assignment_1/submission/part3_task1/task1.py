@@ -22,14 +22,15 @@ SMALL = False
 # Set the following flat to print ranks to stdout. DO NOT set this for Wikipedia!
 DEBUG = False
 
+# OUTPUT PATH: Generally a good idea to have the application name in the output directory name.
+HDFS_OUTPUT_PATH = "hdfs://10.10.1.1:9000/result_{}".format(APP_NAME)
+
+SPARK_MASTER = "spark://c220g5-111023vm-1.wisc.cloudlab.us:7077"
 ### END USER CONFIGURATION ###
 
 
 
-# OUTPUT PATH
-HDFS_OUTPUT_PATH = "hdfs://10.10.1.1:9000/result_{}".format(APP_NAME)
-
-spark = SparkSession.builder.appName(APP_NAME).master("spark://c220g5-111023vm-1.wisc.cloudlab.us:7077").getOrCreate()
+spark = SparkSession.builder.appName(APP_NAME).master(SPARK_MASTER).getOrCreate()
 
 if SMALL:
     textDf = spark.read.text(HDFS_INPUT_PATH)

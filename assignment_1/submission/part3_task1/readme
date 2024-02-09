@@ -1,0 +1,16 @@
+PageRank Implementation is provided in `task1.py`.
+
+Please note that the following settings under the USER_CONFIGURATION section in task1.py needed to be updated before running.
+
+1. Dataset Selection: The application can be used to process Berkeley-Stanford and Wikipedia datasets. Uncomment the relevant lines in the configuration sections.
+2. DEBUG Flag: The application allows printing output ranks to stdout. It is generally not a good idea to do this with the Wikipedia dataset, although it can be.
+3. APP_NAME: Give a name to the application so that it can be identified easily on the webUIs. 
+4. SPARK_MASTER: Update the URL to point to the spark master of your cluster.
+5. HDFS_OUTPUT_PATH: Provide an appropriate output directory to write data to. 
+
+Once the configuration is done. Use `run.sh` as follows to run the application. The output will be written to the provided output directory.
+
+```
+SPARK_HOME_DIR=/path/to/spark/ ./run.sh
+
+```
