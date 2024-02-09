@@ -1,0 +1,10 @@
+Task 4 implementation is in `task4.py`
+
+See Task 1 README for general script use.
+
+`run.sh` can be used to run Task 4.
+
+```
+SPARK_HOME_DIR=/path/to/spark/ ./run.sh
+
+```

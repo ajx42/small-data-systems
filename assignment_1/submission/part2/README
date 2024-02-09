@@ -1,0 +1,11 @@
+Part 2 implementation is provided in `part2.py`
+
+Use `run.sh` to to run the application
+
+```
+SPARK_HOME_DIR=/path/to/spark/ IN=input_file_path OUT=output_file_path ./run.sh
+```
+
+The sorted output file will be stored in a directory named by the given 
+output_file_path
+
