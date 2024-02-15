@@ -34,11 +34,12 @@ def train_model(model, train_loader, optimizer, criterion, epoch):
         loss.backward()
         optimizer.step()
 
-        running_loss += 0.0
+        running_loss += loss.item()
         if batch_idx % 20 == 0:  # print statistics after every 20 iterations
-            print('Epoch: {} [{}/{} ({:.0f}%)]\tLoss: {:.6f}'.format(
+            print('Epoch: {} [{}/{} ({:.0f}%)]\tLoss: {:.3f}'.format(
                 epoch + 1, batch_idx * len(data), len(train_loader.dataset),
-                100. * batch_idx / len(train_loader), running_loss.item()))
+                100. * batch_idx / len(train_loader), running_loss / 20))
+            running_loss = 0.0
     return None
 
 def test_model(model, test_loader, criterion):
