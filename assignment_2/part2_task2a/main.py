@@ -78,7 +78,7 @@ def test_model(model, test_loader, criterion):
             100. * correct / len(test_loader.dataset)))
 
 
-def main():
+def main(rank):
     normalize = transforms.Normalize(mean=[x/255.0 for x in [125.3, 123.0, 113.9]],
                                 std=[x/255.0 for x in [63.0, 62.1, 66.7]])
     transform_train = transforms.Compose([
@@ -93,12 +93,17 @@ def main():
             normalize])
     training_set = datasets.CIFAR10(root="./data", train=True,
                                                 download=True, transform=transform_train)
+    
+    train_sampler = torch.utils.data.distributed.DistributedSampler(training_set,
+                                                                    rank=rank,
+                                                                    seed=0)
     train_loader = torch.utils.data.DataLoader(training_set,
                                                     num_workers=2,
                                                     batch_size=batch_size,
-                                                    sampler=None,
-                                                    shuffle=True,
+                                                    sampler=train_sampler,
+                                                    shuffle=False,
                                                     pin_memory=True)
+    
     test_set = datasets.CIFAR10(root="./data", train=False,
                                 download=True, transform=transform_test)
 
@@ -121,7 +126,7 @@ def main():
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='')
-    parser.add_argument('-i', '--master-ip', type=str, default='172.18.0.3:16') 
+    parser.add_argument('-i', '--master-ip', type=str, default='172.18.0.2:6585') 
     parser.add_argument('-r', '--rank', type=int)
     parser.add_argument('-n', '--num-nodes', type=int, default=4)
 
@@ -129,4 +134,4 @@ if __name__ == "__main__":
 
     dist.init_process_group('gloo', init_method='tcp://{}'.format(args.master_ip),
                         world_size=args.num_nodes, rank=args.rank)
-    main()
+    main(args.rank)
