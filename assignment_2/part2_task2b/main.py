@@ -46,12 +46,6 @@ def train_model(model, train_loader, optimizer, criterion, epoch):
             dist.all_reduce(param.grad.data, op=dist.ReduceOp.SUM)
             param.grad.data /= float(args.num_nodes)
 
-            avg_gradients = torch.zeros_like(param.grad.data)
-            if args.rank == 0:
-                dist.scatter(param.grad.data, [avg_gradients for _ in range(args.num_nodes)], src=0)
-            else:
-                dist.scatter(param.grad.data, src=0)
-
         optimizer.step()
 
         stop = time.time()
