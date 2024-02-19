@@ -23,7 +23,6 @@ random.seed(0)
 np.random.seed(0)
 torch.manual_seed(0)
 
-batch_size = 64  # batch for one node
 def train_model(model, train_loader, optimizer, criterion, epoch):
     """
     model (torch.nn.module): The model created to train
@@ -132,6 +131,7 @@ if __name__ == "__main__":
     parser.add_argument('-n', '--num-nodes', type=int, default=4)
 
     args = parser.parse_args()
+    batch_size = 256//args.num_nodes  # batch for one node
 
     dist.init_process_group('gloo', init_method='tcp://{}'.format(args.master_ip),
                         world_size=args.num_nodes, rank=args.rank)
