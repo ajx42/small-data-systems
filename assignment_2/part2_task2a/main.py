@@ -12,11 +12,15 @@ import torch.optim as optim
 import logging
 import random
 import model as mdl
+
+import torch.distributed as dist
+
 device = "cpu"
 torch.set_num_threads(4)
 
 random.seed(0)
 np.random.seed(0)
+torch.manual_seed(0)
 
 batch_size = 256 # batch for one node
 def train_model(model, train_loader, optimizer, criterion, epoch):
@@ -117,9 +121,12 @@ def main():
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='')
-    parser.add_argument('-i', '--master-ip', type=str) 
+    parser.add_argument('-i', '--master-ip', type=str, default='172.18.0.3:16') 
     parser.add_argument('-r', '--rank', type=int)
     parser.add_argument('-n', '--num-nodes', type=int, default=4)
 
     args = parser.parse_args()
+
+    dist.init_process_group('gloo', init_method='tcp://{}'.format(args.master_ip),
+                        world_size=args.num_nodes, rank=args.rank)
     main()
