@@ -51,7 +51,7 @@ def train_model(model, train_loader, optimizer, criterion, epoch):
         running_loss += loss.item()
         if batch_idx % 20 == 0:  # print statistics after every 20 iterations
             print('Epoch: {} [{}/{} ({:.0f}%)]\tLoss: {:.3f}'.format(
-                epoch + 1, batch_idx * len(data) * args.num_nodes, len(train_loader.dataset),
+                epoch + 1, batch_idx * len(data), len(train_loader.dataset),
                 100. * batch_idx / len(train_loader), running_loss / 20))
             running_loss = 0.0
     
