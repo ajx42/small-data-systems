@@ -22,7 +22,7 @@ random.seed(0)
 np.random.seed(0)
 torch.manual_seed(0)
 
-batch_size = 256 # batch for one node
+batch_size = 64 # batch for one node
 def train_model(model, train_loader, optimizer, criterion, epoch):
     """
     model (torch.nn.module): The model created to train
@@ -35,6 +35,7 @@ def train_model(model, train_loader, optimizer, criterion, epoch):
     running_loss = 0.0
     average_time_per_iteration = []
     for batch_idx, (data, target) in enumerate(train_loader):
+        # print(data[0], target[0])
         start = time.time()
         data, target = data.to(device), target.to(device)
         optimizer.zero_grad()
@@ -42,6 +43,22 @@ def train_model(model, train_loader, optimizer, criterion, epoch):
         output = model(data)
         loss = criterion(output, target)
         loss.backward()
+
+        for param in model.parameters():
+            gradient = param.grad
+            gathered_gradient = [torch.zeros_like(gradient) for _ in range(args.num_nodes)]
+            if args.rank == 0:
+                dist.gather(gradient, gathered_gradient, dst=0)
+            else:
+                dist.gather(gradient, dst=0)
+
+            avg_gradients = torch.zeros_like(gradient)
+            if args.rank == 0:
+                avg_gradients = torch.stack(gathered_gradient).mean(dim=0)
+                dist.scatter(param.grad.data, [avg_gradients for _ in range(args.num_nodes)], src=0)
+            else:
+                dist.scatter(param.grad.data, src=0)
+        
         optimizer.step()
 
         stop = time.time()
@@ -135,3 +152,4 @@ if __name__ == "__main__":
     dist.init_process_group('gloo', init_method='tcp://{}'.format(args.master_ip),
                         world_size=args.num_nodes, rank=args.rank)
     main(args.rank)
+
