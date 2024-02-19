@@ -22,7 +22,7 @@ random.seed(0)
 np.random.seed(0)
 torch.manual_seed(0)
 
-batch_size = 64 # batch for one node
+batch_size = 64  # batch for one node
 def train_model(model, train_loader, optimizer, criterion, epoch):
     """
     model (torch.nn.module): The model created to train
