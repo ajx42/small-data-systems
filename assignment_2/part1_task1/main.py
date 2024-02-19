@@ -1,4 +1,5 @@
 import os
+import time
 import torch
 import json
 import copy
@@ -13,6 +14,9 @@ import model as mdl
 device = "cpu"
 torch.set_num_threads(4)
 
+random.seed(0)
+np.random.seed(0)
+
 batch_size = 256 # batch for one node
 def train_model(model, train_loader, optimizer, criterion, epoch):
     """
@@ -24,8 +28,9 @@ def train_model(model, train_loader, optimizer, criterion, epoch):
     """
 
     running_loss = 0.0
-    # remember to exit the train loop at end of the epoch
+    average_time_per_iteration = []
     for batch_idx, (data, target) in enumerate(train_loader):
+        start = time.time()
         data, target = data.to(device), target.to(device)
         optimizer.zero_grad()
 
@@ -34,12 +39,20 @@ def train_model(model, train_loader, optimizer, criterion, epoch):
         loss.backward()
         optimizer.step()
 
+        stop = time.time()
+        if batch_idx < 40:  # only store the first 40 iterations
+            average_time_per_iteration.append(stop-start)
+
         running_loss += loss.item()
         if batch_idx % 20 == 0:  # print statistics after every 20 iterations
             print('Epoch: {} [{}/{} ({:.0f}%)]\tLoss: {:.3f}'.format(
                 epoch + 1, batch_idx * len(data), len(train_loader.dataset),
                 100. * batch_idx / len(train_loader), running_loss / 20))
             running_loss = 0.0
+    
+    # print the average time per iteration for the first 40 iterations, discarding the first
+    print(f'Average time per iteration: {np.mean(average_time_per_iteration[1:]):.2f} +- '
+           f'{np.std(average_time_per_iteration[1:]):.2f}')
     return None
 
 def test_model(model, test_loader, criterion):
@@ -95,6 +108,7 @@ def main():
     model.to(device)
     optimizer = optim.SGD(model.parameters(), lr=0.1,
                           momentum=0.9, weight_decay=0.0001)
+    
     # running training for one epoch
     for epoch in range(1):
         train_model(model, train_loader, optimizer, training_criterion, epoch)
