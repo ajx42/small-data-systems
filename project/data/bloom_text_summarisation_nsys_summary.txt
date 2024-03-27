@@ -1,3 +1,5 @@
+T4, single GPU, bloom
+
 
 NOTICE: Existing SQLite export found: report1.sqlite
         It is assumed file was previously exported from: report1.nsys-rep
