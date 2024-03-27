@@ -1,0 +1,714 @@
+
+NOTICE: Existing SQLite export found: report1.sqlite
+        It is assumed file was previously exported from: report1.nsys-rep
+        Consider using --force-export=true if needed.
+
+Processing [report1.sqlite] with [/opt/nvidia/nsight-systems/2024.2.1/host-linux-x64/reports/nvtx_sum.py]... 
+
+ ** NVTX Range Summary (nvtx_sum):
+
+ Time (%)  Total Time (ns)  Instances  Avg (ns)   Med (ns)   Min (ns)  Max (ns)   StdDev (ns)   Style                                                   Range                                                
+ --------  ---------------  ---------  ---------  ---------  --------  ---------  -----------  --------  ----------------------------------------------------------------------------------------------------
+     44.4       4973562914       1631  3049394.8  2774029.0   2440219  181891327    5345145.3  PushPop   TensorRT:ExecutionContext::enqueue                                                                  
+      5.3        599020233      79919     7495.3     6756.0      5368     352106       4774.3  StartEnd  myelin-exec:myelinGraphExecute                                                                      
+      1.6        174305547       1631   106870.4    16692.0     13950   99466438    2624116.0  PushPop   TensorRT:BloomForCausalLM/transformer/layers/0/attention/PLUGIN_V2_GPTAttention_0                   
+      1.0        116607106     160265      727.6      691.0       429     294007       1425.8  StartEnd  myelin-exec:myelinTensorGetMemory                                                                   
+      1.0        112822209         49  2302494.1  2270474.0   2052739    4027458     271016.6  StartEnd  myelinGraphDeserializeBinary                                                                        
+      1.0        109011527       1631    66837.2    20049.0     16125   56164728    1456919.8  PushPop   TensorRT:BloomForCausalLM/transformer/layers/0/attention/qkv/PLUGIN_V2_Gemm_0                       
+      0.9        105356836       1631    64596.5    14490.0     12029   79623807    1971253.8  PushPop   TensorRT:BloomForCausalLM/lm_head/PLUGIN_V2_Gemm_0                                                  
+      0.5         58426889      79919      731.1      657.0       465     314574       1339.1  StartEnd  myelin-exec:myelinGraphUnload                                                                       
+      0.4         48084680       1631    29481.7    27605.0     21025     172334       7537.0  PushPop   TensorRT:{ForeignNode[BloomForCausalLM/transformer/vocab_embedding/CONSTANT_0...BloomForCausalLM/tr…
+      0.4         46811243         49   955331.5   894618.0    817463    2419444     237234.2  StartEnd  myelin-exec:myelinGraphLoadPersistent                                                               
+      0.4         44327152      79919      554.7      473.0       273     230925       1156.5  StartEnd  myelin-exec:myelinGraphLoad                                                                         
+      0.4         42352030       1631    25966.9    24413.0     20503     298425      12082.2  PushPop   TensorRT:{ForeignNode[BloomForCausalLM/transformer/ln_f/CONSTANT_0 + BloomForCausalLM/transformer/l…
+      0.3         32532832      79919      407.1      343.0       217     368338       2053.5  StartEnd  myelin-exec:myelinTensorGetInputMemoryBatch                                                         
+      0.3         31923063       1631    19572.7    18023.0     15356     120620       5340.7  PushPop   TensorRT:{ForeignNode[BloomForCausalLM/transformer/layers/0/post_layernorm/CONSTANT_0 + BloomForCau…
+      0.3         31082810       1631    19057.5    16769.0     13736     300006      12864.6  PushPop   TensorRT:{ForeignNode[BloomForCausalLM/transformer/layers/14/post_layernorm/CONSTANT_0 + BloomForCa…
+      0.3         29978495      79919      375.1      325.0       209      27547        428.0  StartEnd  myelin-exec:myelinTensorGetOutputMemoryBatch                                                        
+      0.3         29710928       1631    18216.4    16772.0     14235     190665       7053.5  PushPop   TensorRT:{ForeignNode[BloomForCausalLM/transformer/layers/1/input_layernorm/CONSTANT_0 + BloomForCa…
+      0.3         29396852       1631    18023.8    16490.0     13397     329250      13445.7  PushPop   TensorRT:{ForeignNode[BloomForCausalLM/transformer/layers/22/input_layernorm/CONSTANT_0 + BloomForC…
+      0.3         29359820       1631    18001.1    16442.0     13803     298102      13680.4  PushPop   TensorRT:{ForeignNode[BloomForCausalLM/transformer/layers/23/input_layernorm/CONSTANT_0 + BloomForC…
+      0.3         29318312       1631    17975.7    16418.0     14115     366840      11012.9  PushPop   TensorRT:{ForeignNode[BloomForCausalLM/transformer/layers/1/post_layernorm/CONSTANT_0 + BloomForCau…
+      0.3         29253421       1631    17935.9    16542.0     13808     325066      10007.9  PushPop   TensorRT:{ForeignNode[BloomForCausalLM/transformer/layers/12/post_layernorm/CONSTANT_0 + BloomForCa…
+      0.3         29061501       1631    17818.2    16747.0     14020      72296       4571.7  PushPop   TensorRT:{ForeignNode[BloomForCausalLM/transformer/layers/23/post_layernorm/CONSTANT_0 + BloomForCa…
+      0.3         29052493       1631    17812.7    16451.0     13635     386696      11963.5  PushPop   TensorRT:{ForeignNode[BloomForCausalLM/transformer/layers/16/input_layernorm/CONSTANT_0 + BloomForC…
+      0.3         28889099       1631    17712.5    16412.0     14154     219009       8124.9  PushPop   TensorRT:{ForeignNode[BloomForCausalLM/transformer/layers/2/post_layernorm/CONSTANT_0 + BloomForCau…
+      0.3         28861377       1631    17695.5    16663.0     13684     290821       7863.9  PushPop   TensorRT:{ForeignNode[BloomForCausalLM/transformer/layers/20/input_layernorm/CONSTANT_0 + BloomForC…
+      0.3         28857383       1631    17693.1    16462.0     13757     310844       9099.7  PushPop   TensorRT:{ForeignNode[BloomForCausalLM/transformer/layers/22/post_layernorm/CONSTANT_0 + BloomForCa…
+      0.3         28815719       1631    17667.5    16577.0     13505     395383      10224.1  PushPop   TensorRT:{ForeignNode[BloomForCausalLM/transformer/layers/16/post_layernorm/CONSTANT_0 + BloomForCa…
+      0.3         28704680       1631    17599.4    16287.0     13406     312632      10726.1  PushPop   TensorRT:{ForeignNode[BloomForCausalLM/transformer/layers/11/input_layernorm/CONSTANT_0 + BloomForC…
+      0.3         28694469       1631    17593.2    16445.0     13752     181461       5718.2  PushPop   TensorRT:{ForeignNode[BloomForCausalLM/transformer/layers/15/input_layernorm/CONSTANT_0 + BloomForC…
+      0.3         28662443       1631    17573.5    16367.0     13655     294805       7879.0  PushPop   TensorRT:{ForeignNode[BloomForCausalLM/transformer/layers/13/input_layernorm/CONSTANT_0 + BloomForC…
+      0.3         28655466       1631    17569.3    16671.0     13673      49833       3679.7  PushPop   TensorRT:{ForeignNode[BloomForCausalLM/transformer/layers/15/post_layernorm/CONSTANT_0 + BloomForCa…
+      0.3         28652279       1631    17567.3    16334.0     13829     256110       7279.8  PushPop   TensorRT:{ForeignNode[BloomForCausalLM/transformer/layers/3/post_layernorm/CONSTANT_0 + BloomForCau…
+      0.3         28616748       1631    17545.5    16503.0     13697     297995       7883.5  PushPop   TensorRT:{ForeignNode[BloomForCausalLM/transformer/layers/21/post_layernorm/CONSTANT_0 + BloomForCa…
+      0.3         28595136       1631    17532.3    16458.0     13688      60742       4041.6  PushPop   TensorRT:{ForeignNode[BloomForCausalLM/transformer/layers/12/input_layernorm/CONSTANT_0 + BloomForC…
+      0.3         28587701       1631    17527.7    16400.0     13658     204164       5836.8  PushPop   TensorRT:{ForeignNode[BloomForCausalLM/transformer/layers/2/input_layernorm/CONSTANT_0 + BloomForCa…
+      0.3         28571262       1631    17517.6    16457.0     13772     334140       8967.1  PushPop   TensorRT:{ForeignNode[BloomForCausalLM/transformer/layers/20/post_layernorm/CONSTANT_0 + BloomForCa…
+      0.3         28529264       1631    17491.9    16528.0     13949      60230       3927.0  PushPop   TensorRT:{ForeignNode[BloomForCausalLM/transformer/layers/11/post_layernorm/CONSTANT_0 + BloomForCa…
+      0.3         28435587       1631    17434.4    16077.0     13796     274666      10605.6  PushPop   TensorRT:{ForeignNode[BloomForCausalLM/transformer/layers/3/input_layernorm/CONSTANT_0 + BloomForCa…
+      0.3         28408999       1631    17418.1    16305.0     13531     136148       5364.3  PushPop   TensorRT:{ForeignNode[BloomForCausalLM/transformer/layers/19/post_layernorm/CONSTANT_0 + BloomForCa…
+      0.3         28399096       1631    17412.1    16147.0     13664     355576       9496.5  PushPop   TensorRT:{ForeignNode[BloomForCausalLM/transformer/layers/9/input_layernorm/CONSTANT_0 + BloomForCa…
+      0.3         28368675       1631    17393.4    16506.0     13746      55187       3755.2  PushPop   TensorRT:{ForeignNode[BloomForCausalLM/transformer/layers/18/input_layernorm/CONSTANT_0 + BloomForC…
+      0.3         28286537       1631    17343.1    16495.0     13683      51917       3512.9  PushPop   TensorRT:{ForeignNode[BloomForCausalLM/transformer/layers/13/post_layernorm/CONSTANT_0 + BloomForCa…
+      0.3         28275282       1631    17336.2    16244.0     13409     184305       5613.6  PushPop   TensorRT:{ForeignNode[BloomForCausalLM/transformer/layers/7/post_layernorm/CONSTANT_0 + BloomForCau…
+      0.3         28258077       1631    17325.6    16201.0     13632      88587       4291.5  PushPop   TensorRT:{ForeignNode[BloomForCausalLM/transformer/layers/6/input_layernorm/CONSTANT_0 + BloomForCa…
+      0.3         28237603       1631    17313.1    16190.0     13362     316923       8294.1  PushPop   TensorRT:{ForeignNode[BloomForCausalLM/transformer/layers/8/input_layernorm/CONSTANT_0 + BloomForCa…
+      0.3         28236458       1631    17312.4    16150.0     13512     327814       9109.3  PushPop   TensorRT:{ForeignNode[BloomForCausalLM/transformer/layers/10/input_layernorm/CONSTANT_0 + BloomForC…
+      0.3         28208735       1631    17295.4    16427.0     13613      42794       3467.6  PushPop   TensorRT:{ForeignNode[BloomForCausalLM/transformer/layers/17/input_layernorm/CONSTANT_0 + BloomForC…
+      0.3         28206353       1631    17293.9    16231.0     13550     308565       8052.8  PushPop   TensorRT:{ForeignNode[BloomForCausalLM/transformer/layers/18/post_layernorm/CONSTANT_0 + BloomForCa…
+      0.3         28189046       1631    17283.3    16329.0     13553      91261       4127.0  PushPop   TensorRT:{ForeignNode[BloomForCausalLM/transformer/layers/21/input_layernorm/CONSTANT_0 + BloomForC…
+      0.3         28165263       1631    17268.7    16113.0     13574     312963       8208.0  PushPop   TensorRT:{ForeignNode[BloomForCausalLM/transformer/layers/4/post_layernorm/CONSTANT_0 + BloomForCau…
+      0.3         28136747       1631    17251.2    16191.0     13537      65874       3871.8  PushPop   TensorRT:{ForeignNode[BloomForCausalLM/transformer/layers/5/post_layernorm/CONSTANT_0 + BloomForCau…
+      0.3         28134040       1631    17249.6    16278.0     13787      46482       3573.1  PushPop   TensorRT:{ForeignNode[BloomForCausalLM/transformer/layers/14/input_layernorm/CONSTANT_0 + BloomForC…
+      0.3         28089349       1631    17222.2    16266.0     13578      46799       3577.3  PushPop   TensorRT:{ForeignNode[BloomForCausalLM/transformer/layers/9/post_layernorm/CONSTANT_0 + BloomForCau…
+      0.3         28072444       1631    17211.8    16208.0     13530      95151       4137.5  PushPop   TensorRT:{ForeignNode[BloomForCausalLM/transformer/layers/10/post_layernorm/CONSTANT_0 + BloomForCa…
+      0.3         28043212       1631    17193.9    16354.0     13377      49814       3621.1  PushPop   TensorRT:{ForeignNode[BloomForCausalLM/transformer/layers/17/post_layernorm/CONSTANT_0 + BloomForCa…
+      0.3         27995398       1631    17164.6    16188.0     13592     115606       4292.0  PushPop   TensorRT:{ForeignNode[BloomForCausalLM/transformer/layers/8/post_layernorm/CONSTANT_0 + BloomForCau…
+      0.2         27926881       1631    17122.6    16072.0     13524      49202       3760.2  PushPop   TensorRT:{ForeignNode[BloomForCausalLM/transformer/layers/4/input_layernorm/CONSTANT_0 + BloomForCa…
+      0.2         27907816       1631    17110.9    16080.0     13467      56192       3864.8  PushPop   TensorRT:{ForeignNode[BloomForCausalLM/transformer/layers/6/post_layernorm/CONSTANT_0 + BloomForCau…
+      0.2         27851575       1631    17076.4    16252.0     13430      70344       3634.1  PushPop   TensorRT:{ForeignNode[BloomForCausalLM/transformer/layers/19/input_layernorm/CONSTANT_0 + BloomForC…
+      0.2         27838364       1631    17068.3    16186.0     13636      48240       3490.0  PushPop   TensorRT:{ForeignNode[BloomForCausalLM/transformer/layers/7/input_layernorm/CONSTANT_0 + BloomForCa…
+      0.2         27687720       1631    16975.9    15829.0     13271     297633       8129.9  PushPop   TensorRT:{ForeignNode[BloomForCausalLM/transformer/layers/5/input_layernorm/CONSTANT_0 + BloomForCa…
+      0.2         24289887      79919      303.9      270.0       171     182759        759.5  StartEnd  myelin-exec:myelinTensorSetInputMemoryBatch                                                         
+      0.2         22716135      79919      284.2      258.0       163      24864        402.0  StartEnd  myelin-exec:myelinTensorSetOutputMemoryBatch                                                        
+      0.2         22303640       1631    13674.8    11707.0     10304     145056      11363.9  PushPop   TensorRT:BloomForCausalLM/transformer/layers/1/attention/PLUGIN_V2_GPTAttention_0                   
+      0.2         22238548       1631    13634.9    11418.0      9769     479380      16793.0  PushPop   TensorRT:BloomForCausalLM/transformer/layers/3/attention/PLUGIN_V2_GPTAttention_0                   
+      0.2         22005624       1631    13492.1    11448.0      9944     605501      17729.0  PushPop   TensorRT:BloomForCausalLM/transformer/layers/7/attention/PLUGIN_V2_GPTAttention_0                   
+      0.2         21890657       1631    13421.6    12183.0      8892      41097       4103.7  PushPop   myelin-exec:BloomForCausalLM/transformer/layers/0/input_layernorm/NORMALIZATION_0_epsilonShiftBloo…
+      0.2         21681230       1631    13293.2    11445.0      9942     140651       9563.0  PushPop   TensorRT:BloomForCausalLM/transformer/layers/6/attention/PLUGIN_V2_GPTAttention_0                   
+      0.2         21636902       1631    13266.0    11471.0      9891     282663      11063.6  PushPop   TensorRT:BloomForCausalLM/transformer/layers/15/attention/PLUGIN_V2_GPTAttention_0                  
+      0.2         21569041       1631    13224.4    11512.0     10056     269557      10684.3  PushPop   TensorRT:BloomForCausalLM/transformer/layers/8/attention/PLUGIN_V2_GPTAttention_0                   
+      0.2         21566280       1631    13222.7    11496.0     10018     124270       9732.7  PushPop   TensorRT:BloomForCausalLM/transformer/layers/2/attention/PLUGIN_V2_GPTAttention_0                   
+      0.2         21535268       1631    13203.7    11442.0      9837     289186      12110.0  PushPop   TensorRT:BloomForCausalLM/transformer/layers/23/attention/PLUGIN_V2_GPTAttention_0                  
+      0.2         21503438       1631    13184.2    11424.0      9959     286487      11157.4  PushPop   TensorRT:BloomForCausalLM/transformer/layers/5/attention/PLUGIN_V2_GPTAttention_0                   
+      0.2         21496580       1631    13180.0    11381.0      9894     424324      13189.8  PushPop   TensorRT:BloomForCausalLM/transformer/layers/17/attention/PLUGIN_V2_GPTAttention_0                  
+      0.2         21425680       1631    13136.5    11446.0     10046     111458       8889.5  PushPop   TensorRT:BloomForCausalLM/transformer/layers/12/attention/PLUGIN_V2_GPTAttention_0                  
+      0.2         21384838       1631    13111.5    11364.0      9827     238855      10360.6  PushPop   TensorRT:BloomForCausalLM/transformer/layers/4/attention/PLUGIN_V2_GPTAttention_0                   
+      0.2         21374386       1631    13105.1    11409.0      9903     298407      10854.0  PushPop   TensorRT:BloomForCausalLM/transformer/layers/16/attention/PLUGIN_V2_GPTAttention_0                  
+      0.2         21344233       1631    13086.6    11450.0      9890     123820       8697.4  PushPop   TensorRT:BloomForCausalLM/transformer/layers/11/attention/PLUGIN_V2_GPTAttention_0                  
+      0.2         21309539       1631    13065.3    11374.0      9768     231054      10333.0  PushPop   TensorRT:BloomForCausalLM/transformer/layers/22/attention/PLUGIN_V2_GPTAttention_0                  
+      0.2         21305615       1631    13062.9    11388.0      9823     305950      11138.8  PushPop   TensorRT:BloomForCausalLM/transformer/layers/20/attention/PLUGIN_V2_GPTAttention_0                  
+      0.2         21282286       1631    13048.6    11418.0      9778     134822       8860.9  PushPop   TensorRT:BloomForCausalLM/transformer/layers/21/attention/PLUGIN_V2_GPTAttention_0                  
+      0.2         21265607       1631    13038.4    11533.0     10023     223931       9804.1  PushPop   TensorRT:BloomForCausalLM/transformer/layers/10/attention/PLUGIN_V2_GPTAttention_0                  
+      0.2         21263154       1631    13036.9    11352.0      9943     310466      11378.8  PushPop   TensorRT:BloomForCausalLM/transformer/layers/19/attention/PLUGIN_V2_GPTAttention_0                  
+      0.2         21248796       1631    13028.1    11426.0      9951     217073       9892.6  PushPop   TensorRT:BloomForCausalLM/transformer/layers/13/attention/PLUGIN_V2_GPTAttention_0                  
+      0.2         21114319       1631    12945.6    11491.0     10068     137577       8600.8  PushPop   TensorRT:BloomForCausalLM/transformer/layers/9/attention/PLUGIN_V2_GPTAttention_0                   
+      0.2         21110729       1631    12943.4    11395.0      9959     102080       8419.4  PushPop   TensorRT:BloomForCausalLM/transformer/layers/14/attention/PLUGIN_V2_GPTAttention_0                  
+      0.2         21079158       1631    12924.1    11364.0      9752     203695       9429.5  PushPop   TensorRT:BloomForCausalLM/transformer/layers/18/attention/PLUGIN_V2_GPTAttention_0                  
+      0.2         20002011       1631    12263.6    11448.0      9607      80123       3901.9  PushPop   TensorRT:BloomForCausalLM/transformer/layers/0/mlp/proj/PLUGIN_V2_Gemm_0                            
+      0.2         19216023       1631    11781.7    10665.0      8799     186193       7510.6  PushPop   TensorRT:BloomForCausalLM/transformer/layers/0/attention/dense/PLUGIN_V2_Gemm_0                     
+      0.2         18768096       1631    11507.1    10664.0      8974      96047       4336.2  PushPop   TensorRT:BloomForCausalLM/transformer/layers/0/mlp/fc/PLUGIN_V2_Gemm_0                              
+      0.2         18416928       1631    11291.8    10465.0      8867     227596       6122.0  PushPop   TensorRT:BloomForCausalLM/transformer/layers/3/attention/qkv/PLUGIN_V2_Gemm_0                       
+      0.2         18404992       1631    11284.5    10194.0      8671     302095      11279.1  PushPop   TensorRT:BloomForCausalLM/transformer/layers/16/attention/qkv/PLUGIN_V2_Gemm_0                      
+      0.2         18387645       1631    11273.8    10423.0      8760     254811       7229.2  PushPop   TensorRT:BloomForCausalLM/transformer/layers/3/mlp/fc/PLUGIN_V2_Gemm_0                              
+      0.2         18275059       1631    11204.8    10381.0      8745     271230       7484.8  PushPop   TensorRT:BloomForCausalLM/transformer/layers/23/attention/qkv/PLUGIN_V2_Gemm_0                      
+      0.2         18213493       1631    11167.1    10552.0      8986      37617       2646.8  PushPop   TensorRT:BloomForCausalLM/transformer/layers/1/attention/qkv/PLUGIN_V2_Gemm_0                       
+      0.2         18175338       1631    11143.7    10191.0      8591     522789      13226.4  PushPop   TensorRT:BloomForCausalLM/transformer/layers/6/attention/qkv/PLUGIN_V2_Gemm_0                       
+      0.2         18109817       1631    11103.5    10367.0      8549     293189       7470.2  PushPop   TensorRT:BloomForCausalLM/transformer/layers/13/attention/qkv/PLUGIN_V2_Gemm_0                      
+      0.2         18105027       1631    11100.6    10130.0      8623     298614       9405.8  PushPop   TensorRT:BloomForCausalLM/transformer/layers/6/mlp/fc/PLUGIN_V2_Gemm_0                              
+      0.2         18079846       1631    11085.1    10184.0      8645     268718       7449.5  PushPop   TensorRT:BloomForCausalLM/transformer/layers/4/mlp/fc/PLUGIN_V2_Gemm_0                              
+      0.2         17998882       1631    11035.5    10383.0      8752     119931       4317.7  PushPop   TensorRT:BloomForCausalLM/transformer/layers/21/mlp/fc/PLUGIN_V2_Gemm_0                             
+      0.2         17979743       1631    11023.8    10330.0      8619     283491       7224.6  PushPop   TensorRT:BloomForCausalLM/transformer/layers/5/mlp/fc/PLUGIN_V2_Gemm_0                              
+      0.2         17978345       1631    11022.9    10249.0      8479     218106       7338.2  PushPop   TensorRT:BloomForCausalLM/transformer/layers/21/attention/qkv/PLUGIN_V2_Gemm_0                      
+      0.2         17976449       1631    11021.7    10243.0      8743     421161      10491.5  PushPop   TensorRT:BloomForCausalLM/transformer/layers/22/mlp/fc/PLUGIN_V2_Gemm_0                             
+      0.2         17971192       1631    11018.5    10246.0      8734     283481       7245.8  PushPop   TensorRT:BloomForCausalLM/transformer/layers/14/mlp/fc/PLUGIN_V2_Gemm_0                             
+      0.2         17964393       1631    11014.3    10370.0      8736     193625       5839.5  PushPop   TensorRT:BloomForCausalLM/transformer/layers/15/mlp/fc/PLUGIN_V2_Gemm_0                             
+      0.2         17959611       1631    11011.4    10303.0      8609      34492       2966.8  PushPop   TensorRT:BloomForCausalLM/transformer/layers/15/attention/qkv/PLUGIN_V2_Gemm_0                      
+      0.2         17952733       1631    11007.2    10211.0      8687     134349       4949.9  PushPop   TensorRT:BloomForCausalLM/transformer/layers/12/attention/qkv/PLUGIN_V2_Gemm_0                      
+      0.2         17930253       1631    10993.4    10357.0      8721     253432       6458.0  PushPop   TensorRT:BloomForCausalLM/transformer/layers/7/mlp/fc/PLUGIN_V2_Gemm_0                              
+      0.2         17922661       1631    10988.8    10372.0      8595     203014       5341.5  PushPop   TensorRT:BloomForCausalLM/transformer/layers/5/attention/qkv/PLUGIN_V2_Gemm_0                       
+      0.2         17915391       1631    10984.3    10390.0      8753      36575       2653.6  PushPop   TensorRT:BloomForCausalLM/transformer/layers/1/mlp/fc/PLUGIN_V2_Gemm_0                              
+      0.2         17901961       1631    10976.1    10400.0      8865      46457       2732.3  PushPop   TensorRT:BloomForCausalLM/transformer/layers/11/mlp/fc/PLUGIN_V2_Gemm_0                             
+      0.2         17892596       1631    10970.3    10273.0      8677     421484      10404.0  PushPop   TensorRT:BloomForCausalLM/transformer/layers/9/attention/qkv/PLUGIN_V2_Gemm_0                       
+      0.2         17869474       1631    10956.1    10132.0      8628     412342      10259.4  PushPop   TensorRT:BloomForCausalLM/transformer/layers/10/attention/qkv/PLUGIN_V2_Gemm_0                      
+      0.2         17868084       1631    10955.3    10345.0      8683     105669       3653.1  PushPop   TensorRT:BloomForCausalLM/transformer/layers/17/attention/qkv/PLUGIN_V2_Gemm_0                      
+      0.2         17833938       1631    10934.4    10353.0      8697      41735       2790.3  PushPop   TensorRT:BloomForCausalLM/transformer/layers/11/attention/qkv/PLUGIN_V2_Gemm_0                      
+      0.2         17825835       1631    10929.4    10136.0      8661     292772       7724.6  PushPop   TensorRT:BloomForCausalLM/transformer/layers/22/attention/qkv/PLUGIN_V2_Gemm_0                      
+      0.2         17750719       1631    10883.3     9909.0      8348     262936       8714.8  PushPop   TensorRT:BloomForCausalLM/transformer/layers/1/attention/dense/PLUGIN_V2_Gemm_0                     
+      0.2         17717314       1631    10862.9    10202.0      8596     218424       5671.7  PushPop   TensorRT:BloomForCausalLM/transformer/layers/2/mlp/fc/PLUGIN_V2_Gemm_0                              
+      0.2         17714468       1631    10861.1    10069.0      8583     293624       8110.9  PushPop   TensorRT:BloomForCausalLM/transformer/layers/18/mlp/fc/PLUGIN_V2_Gemm_0                             
+      0.2         17709396       1631    10858.0    10330.0      8579      41600       2548.6  PushPop   TensorRT:BloomForCausalLM/transformer/layers/23/mlp/fc/PLUGIN_V2_Gemm_0                             
+      0.2         17707294       1631    10856.7    10289.0      8623      40498       2803.2  PushPop   TensorRT:BloomForCausalLM/transformer/layers/19/mlp/fc/PLUGIN_V2_Gemm_0                             
+      0.2         17699875       1631    10852.2    10161.0      8489     451519      11128.8  PushPop   TensorRT:BloomForCausalLM/transformer/layers/17/mlp/fc/PLUGIN_V2_Gemm_0                             
+      0.2         17670960       1631    10834.4    10288.0      8555      35178       2497.7  PushPop   TensorRT:BloomForCausalLM/transformer/layers/7/attention/qkv/PLUGIN_V2_Gemm_0                       
+      0.2         17670635       1631    10834.2    10287.0      8554      35820       2542.2  PushPop   TensorRT:BloomForCausalLM/transformer/layers/9/mlp/fc/PLUGIN_V2_Gemm_0                              
+      0.2         17669946       1631    10833.8    10120.0      8535     283293       7315.5  PushPop   TensorRT:BloomForCausalLM/transformer/layers/20/attention/qkv/PLUGIN_V2_Gemm_0                      
+      0.2         17669055       1631    10833.3    10302.0      8682      90890       3156.5  PushPop   TensorRT:BloomForCausalLM/transformer/layers/13/mlp/fc/PLUGIN_V2_Gemm_0                             
+      0.2         17649772       1631    10821.4    10320.0      8500      52096       2621.8  PushPop   TensorRT:BloomForCausalLM/transformer/layers/19/attention/qkv/PLUGIN_V2_Gemm_0                      
+      0.2         17627331       1631    10807.7    10254.0      8611      43180       2707.0  PushPop   TensorRT:BloomForCausalLM/transformer/layers/8/mlp/fc/PLUGIN_V2_Gemm_0                              
+      0.2         17616680       1631    10801.2    10155.0      8612     102679       3468.3  PushPop   TensorRT:BloomForCausalLM/transformer/layers/18/attention/qkv/PLUGIN_V2_Gemm_0                      
+      0.2         17593764       1631    10787.1    10198.0      8563      42206       2788.3  PushPop   TensorRT:BloomForCausalLM/transformer/layers/8/attention/qkv/PLUGIN_V2_Gemm_0                       
+      0.2         17572597       1631    10774.1     9942.0      8363     288796       9394.1  PushPop   TensorRT:BloomForCausalLM/transformer/layers/23/mlp/proj/PLUGIN_V2_Gemm_0                           
+      0.2         17529407       1631    10747.6    10193.0      8745      65905       2884.7  PushPop   TensorRT:BloomForCausalLM/transformer/layers/10/mlp/fc/PLUGIN_V2_Gemm_0                             
+      0.2         17504042       1631    10732.1    10124.0      8646     232664       6216.5  PushPop   TensorRT:BloomForCausalLM/transformer/layers/16/mlp/fc/PLUGIN_V2_Gemm_0                             
+      0.2         17484771       1631    10720.3    10193.0      8697      49839       2490.3  PushPop   TensorRT:BloomForCausalLM/transformer/layers/12/mlp/fc/PLUGIN_V2_Gemm_0                             
+      0.2         17481612       1631    10718.3     9788.0      8212     473219      13503.6  PushPop   TensorRT:BloomForCausalLM/transformer/layers/17/mlp/proj/PLUGIN_V2_Gemm_0                           
+      0.2         17466693       1631    10709.2     9857.0      8300     198095       6211.4  PushPop   TensorRT:BloomForCausalLM/transformer/layers/3/attention/dense/PLUGIN_V2_Gemm_0                     
+      0.2         17465765       1631    10708.6    10187.0      8704      29922       2184.0  PushPop   TensorRT:BloomForCausalLM/transformer/layers/2/attention/qkv/PLUGIN_V2_Gemm_0                       
+      0.2         17457961       1631    10703.8    10174.0      8698      69501       2743.9  PushPop   TensorRT:BloomForCausalLM/transformer/layers/14/attention/qkv/PLUGIN_V2_Gemm_0                      
+      0.2         17435874       1631    10690.3     9767.0      8273     299215      10416.7  PushPop   TensorRT:BloomForCausalLM/transformer/layers/20/mlp/proj/PLUGIN_V2_Gemm_0                           
+      0.2         17430198       1631    10686.8    10059.0      8439      40037       2786.4  PushPop   TensorRT:BloomForCausalLM/transformer/layers/4/attention/qkv/PLUGIN_V2_Gemm_0                       
+      0.2         17414892       1631    10677.4     9794.0      8194     462910      11551.6  PushPop   TensorRT:BloomForCausalLM/transformer/layers/16/attention/dense/PLUGIN_V2_Gemm_0                    
+      0.2         17412947       1631    10676.2     9893.0      8330     227232       6108.6  PushPop   TensorRT:BloomForCausalLM/transformer/layers/2/mlp/proj/PLUGIN_V2_Gemm_0                            
+      0.2         17396670       1631    10666.3     9860.0      8349     253622       6967.0  PushPop   TensorRT:BloomForCausalLM/transformer/layers/11/mlp/proj/PLUGIN_V2_Gemm_0                           
+      0.2         17356979       1631    10641.9     9759.0      8206     636788      15680.6  PushPop   TensorRT:BloomForCausalLM/transformer/layers/18/attention/dense/PLUGIN_V2_Gemm_0                    
+      0.2         17333398       1631    10627.5     9790.0      8202     272275       7163.3  PushPop   TensorRT:BloomForCausalLM/transformer/layers/6/mlp/proj/PLUGIN_V2_Gemm_0                            
+      0.2         17307144       1631    10611.4     9837.0      8274     109025       4261.6  PushPop   TensorRT:BloomForCausalLM/transformer/layers/7/mlp/proj/PLUGIN_V2_Gemm_0                            
+      0.2         17296486       1631    10604.8     9815.0      8344     262329       6816.6  PushPop   TensorRT:BloomForCausalLM/transformer/layers/20/attention/dense/PLUGIN_V2_Gemm_0                    
+      0.2         17289216       1631    10600.4    10087.0      8655      40611       2489.6  PushPop   TensorRT:BloomForCausalLM/transformer/layers/20/mlp/fc/PLUGIN_V2_Gemm_0                             
+      0.2         17227146       1631    10562.3     9881.0      8313     301817       7665.2  PushPop   TensorRT:BloomForCausalLM/transformer/layers/10/attention/dense/PLUGIN_V2_Gemm_0                    
+      0.2         17223702       1631    10560.2     9846.0      8189     120176       3952.8  PushPop   TensorRT:BloomForCausalLM/transformer/layers/6/attention/dense/PLUGIN_V2_Gemm_0                     
+      0.2         17211622       1631    10552.8     9923.0      8323      44068       2809.5  PushPop   TensorRT:BloomForCausalLM/transformer/layers/4/mlp/proj/PLUGIN_V2_Gemm_0                            
+      0.2         17195597       1631    10543.0     9901.0      8348      97511       3367.7  PushPop   TensorRT:BloomForCausalLM/transformer/layers/2/attention/dense/PLUGIN_V2_Gemm_0                     
+      0.2         17175938       1631    10530.9     9824.0      8354     295953       7487.0  PushPop   TensorRT:BloomForCausalLM/transformer/layers/14/attention/dense/PLUGIN_V2_Gemm_0                    
+      0.2         17164917       1631    10524.2     9819.0      8257     104513       3700.1  PushPop   TensorRT:BloomForCausalLM/transformer/layers/12/mlp/proj/PLUGIN_V2_Gemm_0                           
+      0.2         17151929       1631    10516.2     9902.0      8267      35525       2708.4  PushPop   TensorRT:BloomForCausalLM/transformer/layers/14/mlp/proj/PLUGIN_V2_Gemm_0                           
+      0.2         17149168       1631    10514.5     9726.0      8146     299193       7665.6  PushPop   TensorRT:BloomForCausalLM/transformer/layers/10/mlp/proj/PLUGIN_V2_Gemm_0                           
+      0.2         17120315       1631    10496.8     9613.0      8094     288670      10196.9  PushPop   TensorRT:BloomForCausalLM/transformer/layers/17/attention/dense/PLUGIN_V2_Gemm_0                    
+      0.2         17063264       1631    10461.8     9844.0      8250      42983       2730.3  PushPop   TensorRT:BloomForCausalLM/transformer/layers/1/mlp/proj/PLUGIN_V2_Gemm_0                            
+      0.2         17063067       1631    10461.7     9811.0      8271      52608       2966.5  PushPop   TensorRT:BloomForCausalLM/transformer/layers/16/mlp/proj/PLUGIN_V2_Gemm_0                           
+      0.2         17060753       1631    10460.3     9894.0      8330      49423       2659.6  PushPop   TensorRT:BloomForCausalLM/transformer/layers/22/attention/dense/PLUGIN_V2_Gemm_0                    
+      0.2         17054187       1631    10456.3     9844.0      8309      58244       2891.3  PushPop   TensorRT:BloomForCausalLM/transformer/layers/12/attention/dense/PLUGIN_V2_Gemm_0                    
+      0.2         17045864       1631    10451.2     9661.0      8088     231502       6611.3  PushPop   TensorRT:BloomForCausalLM/transformer/layers/21/attention/dense/PLUGIN_V2_Gemm_0                    
+      0.2         16995767       1631    10420.5     9848.0      8379      36220       2494.0  PushPop   TensorRT:BloomForCausalLM/transformer/layers/8/attention/dense/PLUGIN_V2_Gemm_0                     
+      0.2         16989348       1631    10416.5     9858.0      8305      34854       2517.3  PushPop   TensorRT:BloomForCausalLM/transformer/layers/4/attention/dense/PLUGIN_V2_Gemm_0                     
+      0.2         16983929       1631    10413.2     9691.0      8291     290420       7378.4  PushPop   TensorRT:BloomForCausalLM/transformer/layers/11/attention/dense/PLUGIN_V2_Gemm_0                    
+      0.2         16983264       1631    10412.8     9783.0      8233      84145       3320.5  PushPop   TensorRT:BloomForCausalLM/transformer/layers/15/mlp/proj/PLUGIN_V2_Gemm_0                           
+      0.2         16976974       1631    10408.9     9756.0      8229      88811       3305.5  PushPop   TensorRT:BloomForCausalLM/transformer/layers/5/mlp/proj/PLUGIN_V2_Gemm_0                            
+      0.2         16964167       1631    10401.1     9864.0      8246      78084       2766.9  PushPop   TensorRT:BloomForCausalLM/transformer/layers/22/mlp/proj/PLUGIN_V2_Gemm_0                           
+      0.2         16960340       1631    10398.7     9660.0      8251     134755       4352.7  PushPop   TensorRT:BloomForCausalLM/transformer/layers/19/attention/dense/PLUGIN_V2_Gemm_0                    
+      0.2         16895852       1631    10359.2     9721.0      8250      54149       2953.5  PushPop   TensorRT:BloomForCausalLM/transformer/layers/21/mlp/proj/PLUGIN_V2_Gemm_0                           
+      0.2         16892528       1631    10357.2     9778.0      8256      31658       2460.4  PushPop   TensorRT:BloomForCausalLM/transformer/layers/8/mlp/proj/PLUGIN_V2_Gemm_0                            
+      0.2         16877535       1631    10348.0     9760.0      8249      39191       2729.7  PushPop   TensorRT:BloomForCausalLM/transformer/layers/9/mlp/proj/PLUGIN_V2_Gemm_0                            
+      0.2         16823552       1631    10314.9     9810.0      8271      43426       2494.3  PushPop   TensorRT:BloomForCausalLM/transformer/layers/19/mlp/proj/PLUGIN_V2_Gemm_0                           
+      0.2         16809695       1631    10306.4     9790.0      8296      34026       2252.8  PushPop   TensorRT:BloomForCausalLM/transformer/layers/3/mlp/proj/PLUGIN_V2_Gemm_0                            
+      0.1         16787819       1631    10293.0     9640.0      8132     188013       5074.0  PushPop   TensorRT:BloomForCausalLM/transformer/layers/13/attention/dense/PLUGIN_V2_Gemm_0                    
+      0.1         16786815       1631    10292.3     9779.0      8174      39782       2404.1  PushPop   TensorRT:BloomForCausalLM/transformer/layers/13/mlp/proj/PLUGIN_V2_Gemm_0                           
+      0.1         16778197       1631    10287.1     9697.0      8153      33904       2511.8  PushPop   TensorRT:BloomForCausalLM/transformer/layers/18/mlp/proj/PLUGIN_V2_Gemm_0                           
+      0.1         16770218       1631    10282.2     9681.0      8122      51234       2718.5  PushPop   TensorRT:BloomForCausalLM/transformer/layers/15/attention/dense/PLUGIN_V2_Gemm_0                    
+      0.1         16756536       1631    10273.8     9684.0      8159      42152       2596.9  PushPop   TensorRT:BloomForCausalLM/transformer/layers/7/attention/dense/PLUGIN_V2_Gemm_0                     
+      0.1         16745031       1631    10266.7     9627.0      8097     151239       4278.4  PushPop   TensorRT:BloomForCausalLM/transformer/layers/5/attention/dense/PLUGIN_V2_Gemm_0                     
+      0.1         16697885       1631    10237.8     9662.0      8086      38675       2565.4  PushPop   TensorRT:BloomForCausalLM/transformer/layers/9/attention/dense/PLUGIN_V2_Gemm_0                     
+      0.1         16648676       1631    10207.6     9690.0      8197      36769       2483.4  PushPop   TensorRT:BloomForCausalLM/transformer/layers/23/attention/dense/PLUGIN_V2_Gemm_0                    
+      0.1         14173371       1631     8690.0     8084.0      6440     202253       5401.9  PushPop   TensorRT:PWN(BloomForCausalLM/transformer/layers/0/attention/qkv/ELEMENTWISE_SUM_0)                 
+      0.1         12213444       1631     7488.3     7037.0      5670      42900       2330.7  PushPop   TensorRT:PWN(PWN(BloomForCausalLM/transformer/layers/0/mlp/fc/ELEMENTWISE_SUM_0), PWN(PWN(PWN(PWN(P…
+      0.1         11824853       1631     7250.1     6713.0      5555      29775       2276.2  PushPop   myelin-exec:BloomForCausalLM/transformer/layers/0/post_layernorm/NORMALIZATION_0_epsilonShiftBloom…
+      0.1         11285043       1631     6919.1     6317.0      5193     279365       8490.8  PushPop   myelin-exec:BloomForCausalLM/transformer/ln_f/NORMALIZATION_0_firstCastBloomForCausalLM/transforme…
+      0.1         11081275       1631     6794.2     6129.0      4922     274014       9436.8  PushPop   TensorRT:PWN(BloomForCausalLM/transformer/layers/15/attention/qkv/ELEMENTWISE_SUM_0)                
+      0.1         11070510       1631     6787.6     6124.0      4982     243772       7024.0  PushPop   TensorRT:PWN(BloomForCausalLM/transformer/layers/21/attention/qkv/ELEMENTWISE_SUM_0)                
+      0.1         11027705       1631     6761.3     6264.0      5366      43233       2406.2  PushPop   myelin-exec:BloomForCausalLM/transformer/layers/1/input_layernorm/NORMALIZATION_0_epsilonShiftBloo…
+      0.1         11010912       1631     6751.0     6220.0      5030     283626       7177.3  PushPop   TensorRT:PWN(PWN(BloomForCausalLM/transformer/layers/23/mlp/fc/ELEMENTWISE_SUM_0), PWN(PWN(PWN(PWN(…
+      0.1         10933243       1631     6703.4     6092.0      4945     395052      10079.0  PushPop   TensorRT:PWN(PWN(BloomForCausalLM/transformer/layers/18/mlp/fc/ELEMENTWISE_SUM_0), PWN(PWN(PWN(PWN(…
+      0.1         10904520       1631     6685.8     6056.0      4936     312478       8279.4  PushPop   myelin-exec:BloomForCausalLM/transformer/layers/12/post_layernorm/NORMALIZATION_0_epsilonShiftBloo…
+      0.1         10894509       1631     6679.6     6092.0      5137     274910       6977.4  PushPop   myelin-exec:BloomForCausalLM/transformer/layers/16/input_layernorm/NORMALIZATION_0_epsilonShiftBlo…
+      0.1         10885633       1631     6674.2     6045.0      4900     285875       7401.6  PushPop   TensorRT:PWN(BloomForCausalLM/transformer/layers/8/attention/qkv/ELEMENTWISE_SUM_0)                 
+      0.1         10875211       1631     6667.8     6045.0      5028     351066       8751.3  PushPop   myelin-exec:BloomForCausalLM/transformer/layers/1/post_layernorm/NORMALIZATION_0_epsilonShiftBloom…
+      0.1         10856865       1631     6656.6     6276.0      5136      43086       2215.0  PushPop   myelin-exec:BloomForCausalLM/transformer/layers/23/post_layernorm/NORMALIZATION_0_epsilonShiftBloo…
+      0.1         10849451       1631     6652.0     6200.0      5032     104087       3073.6  PushPop   TensorRT:PWN(PWN(BloomForCausalLM/transformer/layers/2/mlp/fc/ELEMENTWISE_SUM_0), PWN(PWN(PWN(PWN(P…
+      0.1         10842834       1631     6648.0     6108.0      4896     245929       6261.5  PushPop   myelin-exec:BloomForCausalLM/transformer/layers/3/post_layernorm/NORMALIZATION_0_epsilonShiftBloom…
+      0.1         10837254       1631     6644.5     6050.0      4844     244780       6626.4  PushPop   TensorRT:PWN(BloomForCausalLM/transformer/layers/7/attention/qkv/ELEMENTWISE_SUM_0)                 
+      0.1         10794628       1631     6618.4     6035.0      5074     284950       7184.3  PushPop   myelin-exec:BloomForCausalLM/transformer/layers/13/input_layernorm/NORMALIZATION_0_epsilonShiftBlo…
+      0.1         10750222       1631     6591.2     6179.0      4956     192400       4917.3  PushPop   TensorRT:PWN(PWN(BloomForCausalLM/transformer/layers/11/mlp/fc/ELEMENTWISE_SUM_0), PWN(PWN(PWN(PWN(…
+      0.1         10747655       1631     6589.6     6182.0      5137      43122       2144.3  PushPop   myelin-exec:BloomForCausalLM/transformer/layers/2/post_layernorm/NORMALIZATION_0_epsilonShiftBloom…
+      0.1         10724631       1631     6575.5     6031.0      4814     293811       7430.3  PushPop   TensorRT:PWN(BloomForCausalLM/transformer/layers/20/attention/qkv/ELEMENTWISE_SUM_0)                
+      0.1         10716052       1631     6570.2     6095.0      4869     292750       7326.2  PushPop   TensorRT:PWN(PWN(BloomForCausalLM/transformer/layers/19/mlp/fc/ELEMENTWISE_SUM_0), PWN(PWN(PWN(PWN(…
+      0.1         10713629       1631     6568.7     6185.0      5120      62191       2271.3  PushPop   TensorRT:PWN(PWN(BloomForCausalLM/transformer/layers/1/mlp/fc/ELEMENTWISE_SUM_0), PWN(PWN(PWN(PWN(P…
+      0.1         10712593       1631     6568.1     6198.0      4931      39941       1987.5  PushPop   TensorRT:PWN(PWN(BloomForCausalLM/transformer/layers/10/mlp/fc/ELEMENTWISE_SUM_0), PWN(PWN(PWN(PWN(…
+      0.1         10712391       1631     6568.0     6173.0      4962      33060       2018.9  PushPop   TensorRT:PWN(BloomForCausalLM/transformer/layers/1/attention/qkv/ELEMENTWISE_SUM_0)                 
+      0.1         10709110       1631     6566.0     6151.0      4907      93604       3000.2  PushPop   TensorRT:PWN(PWN(BloomForCausalLM/transformer/layers/4/mlp/fc/ELEMENTWISE_SUM_0), PWN(PWN(PWN(PWN(P…
+      0.1         10701387       1631     6561.2     6154.0      4893      88084       2838.7  PushPop   TensorRT:PWN(PWN(BloomForCausalLM/transformer/layers/15/mlp/fc/ELEMENTWISE_SUM_0), PWN(PWN(PWN(PWN(…
+      0.1         10696186       1631     6558.1     6111.0      4918      41451       2502.4  PushPop   TensorRT:PWN(PWN(BloomForCausalLM/transformer/layers/5/mlp/fc/ELEMENTWISE_SUM_0), PWN(PWN(PWN(PWN(P…
+      0.1         10683705       1631     6550.4     6030.0      5093     265463       6643.3  PushPop   myelin-exec:BloomForCausalLM/transformer/layers/3/input_layernorm/NORMALIZATION_0_epsilonShiftBloo…
+      0.1         10680943       1631     6548.7     6146.0      5009      39032       2166.6  PushPop   TensorRT:PWN(PWN(BloomForCausalLM/transformer/layers/8/mlp/fc/ELEMENTWISE_SUM_0), PWN(PWN(PWN(PWN(P…
+      0.1         10679378       1631     6547.7     6032.0      4854     262468       6685.8  PushPop   TensorRT:PWN(BloomForCausalLM/transformer/layers/22/attention/qkv/ELEMENTWISE_SUM_0)                
+      0.1         10659352       1631     6535.5     6188.0      4997      38222       1958.1  PushPop   TensorRT:PWN(PWN(BloomForCausalLM/transformer/layers/12/mlp/fc/ELEMENTWISE_SUM_0), PWN(PWN(PWN(PWN(…
+      0.1         10653297       1631     6531.8     6134.0      4938      31871       2148.5  PushPop   myelin-exec:BloomForCausalLM/transformer/layers/11/post_layernorm/NORMALIZATION_0_epsilonShiftBloo…
+      0.1         10650331       1631     6529.9     6225.0      5039      31693       1844.7  PushPop   TensorRT:PWN(PWN(BloomForCausalLM/transformer/layers/9/mlp/fc/ELEMENTWISE_SUM_0), PWN(PWN(PWN(PWN(P…
+      0.1         10645495       1631     6527.0     6170.0      5192      29082       1811.4  PushPop   myelin-exec:BloomForCausalLM/transformer/layers/21/input_layernorm/NORMALIZATION_0_epsilonShiftBlo…
+      0.1         10645368       1631     6526.9     6152.0      4866      35553       1976.1  PushPop   TensorRT:PWN(PWN(BloomForCausalLM/transformer/layers/6/mlp/fc/ELEMENTWISE_SUM_0), PWN(PWN(PWN(PWN(P…
+      0.1         10644215       1631     6526.2     6049.0      4832     222344       5781.5  PushPop   TensorRT:PWN(BloomForCausalLM/transformer/layers/23/attention/qkv/ELEMENTWISE_SUM_0)                
+      0.1         10638534       1631     6522.7     6011.0      4840     125125       4015.8  PushPop   myelin-exec:BloomForCausalLM/transformer/layers/19/post_layernorm/NORMALIZATION_0_epsilonShiftBloo…
+      0.1         10630823       1631     6518.0     6205.0      5280      37748       1704.2  PushPop   myelin-exec:BloomForCausalLM/transformer/layers/20/input_layernorm/NORMALIZATION_0_epsilonShiftBlo…
+      0.1         10623839       1631     6513.7     6091.0      4894      97909       2962.4  PushPop   myelin-exec:BloomForCausalLM/transformer/layers/22/post_layernorm/NORMALIZATION_0_epsilonShiftBloo…
+      0.1         10605087       1631     6502.2     6147.0      5010      78105       2380.7  PushPop   TensorRT:PWN(PWN(BloomForCausalLM/transformer/layers/3/mlp/fc/ELEMENTWISE_SUM_0), PWN(PWN(PWN(PWN(P…
+      0.1         10602646       1631     6500.7     5980.0      4903     305269       7624.9  PushPop   myelin-exec:BloomForCausalLM/transformer/layers/8/input_layernorm/NORMALIZATION_0_epsilonShiftBloo…
+      0.1         10598050       1631     6497.9     6130.0      4901     113629       3938.4  PushPop   TensorRT:PWN(PWN(BloomForCausalLM/transformer/layers/20/mlp/fc/ELEMENTWISE_SUM_0), PWN(PWN(PWN(PWN(…
+      0.1         10596744       1631     6497.1     6146.0      4949      62342       2269.8  PushPop   TensorRT:PWN(PWN(BloomForCausalLM/transformer/layers/7/mlp/fc/ELEMENTWISE_SUM_0), PWN(PWN(PWN(PWN(P…
+      0.1         10596227       1631     6496.8     6077.0      5071      35867       2171.3  PushPop   myelin-exec:BloomForCausalLM/transformer/layers/15/input_layernorm/NORMALIZATION_0_epsilonShiftBlo…
+      0.1         10590047       1631     6493.0     6049.0      4883     160005       4279.3  PushPop   TensorRT:PWN(BloomForCausalLM/transformer/layers/16/attention/qkv/ELEMENTWISE_SUM_0)                
+      0.1         10578039       1631     6485.6     5995.0      4742     168291       4841.5  PushPop   TensorRT:PWN(BloomForCausalLM/transformer/layers/13/attention/qkv/ELEMENTWISE_SUM_0)                
+      0.1         10577455       1631     6485.3     5997.0      5017     299077       7446.2  PushPop   myelin-exec:BloomForCausalLM/transformer/layers/18/post_layernorm/NORMALIZATION_0_epsilonShiftBloo…
+      0.1         10569911       1631     6480.6     6090.0      4905      82163       2665.0  PushPop   myelin-exec:BloomForCausalLM/transformer/layers/22/input_layernorm/NORMALIZATION_0_epsilonShiftBlo…
+      0.1         10567419       1631     6479.1     6031.0      4887     157035       4191.0  PushPop   myelin-exec:BloomForCausalLM/transformer/layers/14/post_layernorm/NORMALIZATION_0_epsilonShiftBloo…
+      0.1         10557587       1631     6473.1     6094.0      4971      44240       2146.1  PushPop   myelin-exec:BloomForCausalLM/transformer/layers/23/input_layernorm/NORMALIZATION_0_epsilonShiftBlo…
+      0.1         10547894       1631     6467.1     6161.0      5156      37041       1743.5  PushPop   myelin-exec:BloomForCausalLM/transformer/layers/14/input_layernorm/NORMALIZATION_0_epsilonShiftBlo…
+      0.1         10547732       1631     6467.0     6126.0      4928      23977       1777.7  PushPop   TensorRT:PWN(PWN(BloomForCausalLM/transformer/layers/16/mlp/fc/ELEMENTWISE_SUM_0), PWN(PWN(PWN(PWN(…
+      0.1         10540843       1631     6462.8     6142.0      5098      27475       1670.0  PushPop   myelin-exec:BloomForCausalLM/transformer/layers/2/input_layernorm/NORMALIZATION_0_epsilonShiftBloo…
+      0.1         10533053       1631     6458.0     6082.0      4857      37521       2270.0  PushPop   TensorRT:PWN(BloomForCausalLM/transformer/layers/10/attention/qkv/ELEMENTWISE_SUM_0)                
+      0.1         10522224       1631     6451.4     6104.0      4798      34593       1905.4  PushPop   TensorRT:PWN(PWN(BloomForCausalLM/transformer/layers/14/mlp/fc/ELEMENTWISE_SUM_0), PWN(PWN(PWN(PWN(…
+      0.1         10521297       1631     6450.8     6085.0      4875      36799       1926.1  PushPop   TensorRT:PWN(BloomForCausalLM/transformer/layers/3/attention/qkv/ELEMENTWISE_SUM_0)                 
+      0.1         10516539       1631     6447.9     6127.0      4909      28419       1897.6  PushPop   TensorRT:PWN(BloomForCausalLM/transformer/layers/9/attention/qkv/ELEMENTWISE_SUM_0)                 
+      0.1         10512727       1631     6445.6     6144.0      4908      24706       1846.7  PushPop   TensorRT:PWN(PWN(BloomForCausalLM/transformer/layers/13/mlp/fc/ELEMENTWISE_SUM_0), PWN(PWN(PWN(PWN(…
+      0.1         10490048       1631     6431.7     6039.0      4917     102116       3056.8  PushPop   TensorRT:PWN(BloomForCausalLM/transformer/layers/19/attention/qkv/ELEMENTWISE_SUM_0)                
+      0.1         10471304       1631     6420.2     6018.0      4968      72016       2552.9  PushPop   myelin-exec:BloomForCausalLM/transformer/layers/5/input_layernorm/NORMALIZATION_0_epsilonShiftBloo…
+      0.1         10462763       1631     6414.9     6100.0      4918      32557       1775.9  PushPop   TensorRT:PWN(PWN(BloomForCausalLM/transformer/layers/21/mlp/fc/ELEMENTWISE_SUM_0), PWN(PWN(PWN(PWN(…
+      0.1         10461967       1631     6414.4     6072.0      4894      35453       1972.2  PushPop   TensorRT:PWN(BloomForCausalLM/transformer/layers/5/attention/qkv/ELEMENTWISE_SUM_0)                 
+      0.1         10461036       1631     6413.9     6044.0      5083      36587       1930.4  PushPop   myelin-exec:BloomForCausalLM/transformer/layers/12/input_layernorm/NORMALIZATION_0_epsilonShiftBlo…
+      0.1         10460838       1631     6413.8     6005.0      5083      52988       2228.7  PushPop   myelin-exec:BloomForCausalLM/transformer/layers/19/input_layernorm/NORMALIZATION_0_epsilonShiftBlo…
+      0.1         10459193       1631     6412.7     6139.0      4934      39286       1634.5  PushPop   TensorRT:PWN(PWN(BloomForCausalLM/transformer/layers/22/mlp/fc/ELEMENTWISE_SUM_0), PWN(PWN(PWN(PWN(…
+      0.1         10456395       1631     6411.0     6002.0      4876      43763       2218.3  PushPop   myelin-exec:BloomForCausalLM/transformer/layers/11/input_layernorm/NORMALIZATION_0_epsilonShiftBlo…
+      0.1         10454923       1631     6410.1     5984.0      5013      87545       2705.0  PushPop   myelin-exec:BloomForCausalLM/transformer/layers/9/input_layernorm/NORMALIZATION_0_epsilonShiftBloo…
+      0.1         10451277       1631     6407.9     6063.0      5040      43331       2028.8  PushPop   myelin-exec:BloomForCausalLM/transformer/layers/18/input_layernorm/NORMALIZATION_0_epsilonShiftBlo…
+      0.1         10450341       1631     6407.3     6113.0      5041      24181       1501.4  PushPop   myelin-exec:BloomForCausalLM/transformer/layers/8/post_layernorm/NORMALIZATION_0_epsilonShiftBloom…
+      0.1         10441627       1631     6402.0     6037.0      4978      37151       1907.0  PushPop   myelin-exec:BloomForCausalLM/transformer/layers/7/input_layernorm/NORMALIZATION_0_epsilonShiftBloo…
+      0.1         10439069       1631     6400.4     6006.0      4769      27964       2077.7  PushPop   TensorRT:PWN(BloomForCausalLM/transformer/layers/12/attention/qkv/ELEMENTWISE_SUM_0)                
+      0.1         10435911       1631     6398.5     6040.0      4846      92403       2818.0  PushPop   TensorRT:PWN(BloomForCausalLM/transformer/layers/6/attention/qkv/ELEMENTWISE_SUM_0)                 
+      0.1         10432456       1631     6396.4     6038.0      4859     116369       3228.5  PushPop   TensorRT:PWN(BloomForCausalLM/transformer/layers/14/attention/qkv/ELEMENTWISE_SUM_0)                
+      0.1         10432412       1631     6396.3     6034.0      4977      95452       2799.0  PushPop   myelin-exec:BloomForCausalLM/transformer/layers/20/post_layernorm/NORMALIZATION_0_epsilonShiftBloo…
+      0.1         10416222       1631     6386.4     5949.0      4960      68630       2497.8  PushPop   myelin-exec:BloomForCausalLM/transformer/layers/6/input_layernorm/NORMALIZATION_0_epsilonShiftBloo…
+      0.1         10395504       1631     6373.7     6010.0      4868      26887       1867.9  PushPop   myelin-exec:BloomForCausalLM/transformer/layers/5/post_layernorm/NORMALIZATION_0_epsilonShiftBloom…
+      0.1         10380806       1631     6364.7     6111.0      4948      25526       1558.7  PushPop   TensorRT:PWN(PWN(BloomForCausalLM/transformer/layers/17/mlp/fc/ELEMENTWISE_SUM_0), PWN(PWN(PWN(PWN(…
+      0.1         10377266       1631     6362.5     6019.0      4913      28294       1887.1  PushPop   myelin-exec:BloomForCausalLM/transformer/layers/7/post_layernorm/NORMALIZATION_0_epsilonShiftBloom…
+      0.1         10374154       1631     6360.6     6047.0      4827      37693       1778.3  PushPop   TensorRT:PWN(BloomForCausalLM/transformer/layers/2/attention/qkv/ELEMENTWISE_SUM_0)                 
+      0.1         10366706       1631     6356.0     5971.0      4951      31152       1935.1  PushPop   myelin-exec:BloomForCausalLM/transformer/layers/4/input_layernorm/NORMALIZATION_0_epsilonShiftBloo…
+      0.1         10360295       1631     6352.1     6022.0      4965      32435       1756.4  PushPop   myelin-exec:BloomForCausalLM/transformer/layers/15/post_layernorm/NORMALIZATION_0_epsilonShiftBloo…
+      0.1         10356938       1631     6350.1     5961.0      4890      75303       2461.3  PushPop   myelin-exec:BloomForCausalLM/transformer/layers/10/post_layernorm/NORMALIZATION_0_epsilonShiftBloo…
+      0.1         10340172       1631     6339.8     6044.0      4998      32917       1702.9  PushPop   myelin-exec:BloomForCausalLM/transformer/layers/13/post_layernorm/NORMALIZATION_0_epsilonShiftBloo…
+      0.1         10336262       1631     6337.4     5990.0      4877      29586       1789.3  PushPop   myelin-exec:BloomForCausalLM/transformer/layers/21/post_layernorm/NORMALIZATION_0_epsilonShiftBloo…
+      0.1         10335981       1631     6337.2     6073.0      4889      28968       1608.5  PushPop   TensorRT:PWN(BloomForCausalLM/transformer/layers/18/attention/qkv/ELEMENTWISE_SUM_0)                
+      0.1         10323761       1631     6329.7     5993.0      4926      30285       1829.3  PushPop   myelin-exec:BloomForCausalLM/transformer/layers/16/post_layernorm/NORMALIZATION_0_epsilonShiftBloo…
+      0.1         10322987       1631     6329.2     6014.0      4749      24386       1719.6  PushPop   TensorRT:PWN(BloomForCausalLM/transformer/layers/17/attention/qkv/ELEMENTWISE_SUM_0)                
+      0.1         10313974       1631     6323.7     6031.0      4845      31659       1653.7  PushPop   TensorRT:PWN(BloomForCausalLM/transformer/layers/11/attention/qkv/ELEMENTWISE_SUM_0)                
+      0.1         10307423       1631     6319.7     6015.0      4866      30775       1694.9  PushPop   TensorRT:PWN(BloomForCausalLM/transformer/layers/4/attention/qkv/ELEMENTWISE_SUM_0)                 
+      0.1         10291878       1631     6310.2     6000.0      5008      26809       1570.9  PushPop   myelin-exec:BloomForCausalLM/transformer/layers/4/post_layernorm/NORMALIZATION_0_epsilonShiftBloom…
+      0.1         10289582       1631     6308.8     5946.0      4976      28327       1944.6  PushPop   myelin-exec:BloomForCausalLM/transformer/layers/10/input_layernorm/NORMALIZATION_0_epsilonShiftBlo…
+      0.1         10287276       1631     6307.3     6000.0      4934      30200       1706.7  PushPop   myelin-exec:BloomForCausalLM/transformer/layers/17/post_layernorm/NORMALIZATION_0_epsilonShiftBloo…
+      0.1         10263014       1631     6292.5     5940.0      4861      27712       1652.5  PushPop   myelin-exec:BloomForCausalLM/transformer/layers/6/post_layernorm/NORMALIZATION_0_epsilonShiftBloom…
+      0.1         10222322       1631     6267.5     5968.0      4986      25450       1521.9  PushPop   myelin-exec:BloomForCausalLM/transformer/layers/17/input_layernorm/NORMALIZATION_0_epsilonShiftBlo…
+      0.1         10218529       1631     6265.2     5954.0      4946      27404       1657.3  PushPop   myelin-exec:BloomForCausalLM/transformer/layers/9/post_layernorm/NORMALIZATION_0_epsilonShiftBloom…
+      0.1          9821464       1631     6021.7     5565.0      4442     248322       6243.0  PushPop   myelin-exec:BloomForCausalLM/transformer/ln_f/NORMALIZATION_0_epsilonShiftBloomForCausalLM/transfo…
+      0.1          9650410         49   196947.1   183231.0    157728     349388      44787.0  StartEnd  myelin-exec:myelinGraphUnloadPersistent                                                             
+      0.1          9473578       2058     4603.3     4305.5      2382      38786       1865.7  StartEnd  myelin-exec:myelinGraphResolveShapes                                                                
+      0.0          2265001       1631     1388.7     1293.0       950      23965        886.6  PushPop   TensorRT:Reformatting CopyNode for Network Input kv_cache_block_pointers                            
+      0.0           905340       1631      555.1      517.0       343      12159        368.5  PushPop   TensorRT:Reformatting CopyNode for Network Input sequence_length                                    
+      0.0           814489       1631      499.4      463.0       329      21947        541.9  PushPop   TensorRT:Reformatting CopyNode for Network Input host_kv_cache_block_pointers                       
+      0.0           809703       1631      496.4      460.0       340      12165        413.2  PushPop   TensorRT:Reformatting CopyNode for Network Input cache_indirection                                  
+      0.0           764757       1631      468.9      420.0       290       9147        397.9  PushPop   TensorRT:Reformatting CopyNode for Network Input context_lengths                                    
+      0.0           699283       1631      428.7      353.0       275      17927        647.5  PushPop   TensorRT:Reformatting CopyNode for Network Input host_request_types                                 
+      0.0           693046       1631      424.9      392.0       304      16979        437.7  PushPop   TensorRT:Reformatting CopyNode for Network Input host_context_lengths                               
+      0.0           676926       1631      415.0      346.0       277       8032        499.1  PushPop   TensorRT:Reformatting CopyNode for Network Input host_past_key_value_lengths                        
+      0.0           656949       1631      402.8      349.0       271      17424        622.6  PushPop   TensorRT:Reformatting CopyNode for Network Input host_sink_token_length                             
+      0.0           629336       1631      385.9      214.0       163     198116       4905.7  PushPop   TensorRT:BloomForCausalLM/transformer/layers/12/attention/qkv/CONSTANT_0                            
+      0.0           606146       1631      371.6      343.0       268       1055         90.5  PushPop   TensorRT:Reformatting CopyNode for Network Input host_max_attention_window_sizes                    
+      0.0           577211       1631      353.9      201.0       152     204754       5064.8  PushPop   TensorRT:BloomForCausalLM/transformer/layers/1/mlp/proj/CONSTANT_0                                  
+      0.0           515457       1631      316.0      207.0       148      65151       1695.4  PushPop   TensorRT:BloomForCausalLM/transformer/layers/9/attention/CONSTANT_0                                 
+      0.0           512773       1631      314.4      231.0       164      28306       1000.1  PushPop   TensorRT:BloomForCausalLM/transformer/layers/18/attention/qkv/CONSTANT_0                            
+      0.0           512334       1631      314.1      278.0       192       7565        405.1  PushPop   TensorRT:BloomForCausalLM/transformer/layers/0/attention/qkv/CONSTANT_0                             
+      0.0           506692       1631      310.7      232.0       164      18166        754.4  PushPop   TensorRT:BloomForCausalLM/transformer/layers/15/mlp/fc/CONSTANT_0                                   
+      0.0           494508       1631      303.2      211.0       165      23333        988.0  PushPop   TensorRT:BloomForCausalLM/transformer/layers/4/attention/qkv/CONSTANT_0                             
+      0.0           489725       1631      300.3      220.0       164      26105        796.9  PushPop   TensorRT:BloomForCausalLM/transformer/layers/23/mlp/fc/CONSTANT_0                                   
+      0.0           485059       1631      297.4      216.0       152      37815       1153.9  PushPop   TensorRT:BloomForCausalLM/transformer/layers/13/mlp/proj/CONSTANT_0                                 
+      0.0           482551       1631      295.9      174.0       137      65438       1714.9  PushPop   TensorRT:BloomForCausalLM/transformer/layers/1/attention/qkv/CONSTANT_1 + BloomForCausalLM/transfor…
+      0.0           480847       1631      294.8      214.0       166      17277        726.4  PushPop   TensorRT:BloomForCausalLM/transformer/layers/0/attention/dense/CONSTANT_0                           
+      0.0           479421       1631      293.9      212.0       148      19753        938.7  PushPop   TensorRT:BloomForCausalLM/transformer/layers/11/mlp/proj/CONSTANT_0                                 
+      0.0           479052       1631      293.7      227.0       161      16076        596.3  PushPop   TensorRT:BloomForCausalLM/transformer/layers/17/mlp/fc/CONSTANT_0                                   
+      0.0           476410       1631      292.1      209.0       148      55122       1383.4  PushPop   TensorRT:BloomForCausalLM/transformer/layers/7/attention/CONSTANT_0                                 
+      0.0           470736       1631      288.6      221.0       160      32099        966.8  PushPop   TensorRT:BloomForCausalLM/transformer/layers/20/attention/CONSTANT_0                                
+      0.0           466586       1631      286.1      214.0       166      15254        495.9  PushPop   TensorRT:BloomForCausalLM/transformer/layers/11/mlp/fc/CONSTANT_0                                   
+      0.0           463132       1631      284.0      212.0       163      19699        674.4  PushPop   TensorRT:BloomForCausalLM/transformer/layers/10/attention/qkv/CONSTANT_0                            
+      0.0           461042       1631      282.7      212.0       164      12966        453.0  PushPop   TensorRT:BloomForCausalLM/transformer/layers/9/mlp/fc/CONSTANT_0                                    
+      0.0           460764       1631      282.5      223.0       157      20926        664.5  PushPop   TensorRT:BloomForCausalLM/transformer/layers/19/attention/CONSTANT_0                                
+      0.0           454671       1631      278.8      208.0       164      16582        605.2  PushPop   TensorRT:BloomForCausalLM/transformer/layers/20/attention/dense/CONSTANT_0                          
+      0.0           454351       1631      278.6      216.0       166      17115        493.7  PushPop   TensorRT:BloomForCausalLM/transformer/layers/14/attention/qkv/CONSTANT_0                            
+      0.0           450973       1631      276.5      206.0       163      11599        480.9  PushPop   TensorRT:BloomForCausalLM/transformer/layers/1/mlp/fc/CONSTANT_0                                    
+      0.0           450090       1631      276.0      223.0       164       3856        294.5  PushPop   TensorRT:BloomForCausalLM/transformer/layers/19/mlp/fc/CONSTANT_0                                   
+      0.0           448483       1631      275.0      219.0       167      18260        622.6  PushPop   TensorRT:BloomForCausalLM/transformer/layers/13/attention/qkv/CONSTANT_0                            
+      0.0           447790       1631      274.5      215.0       167       7355        341.1  PushPop   TensorRT:BloomForCausalLM/transformer/layers/7/mlp/fc/CONSTANT_0                                    
+      0.0           447339       1631      274.3      221.0       163       9479        379.5  PushPop   TensorRT:BloomForCausalLM/transformer/layers/20/attention/qkv/CONSTANT_0                            
+      0.0           446832       1631      274.0      230.0       167       4073        249.8  PushPop   TensorRT:BloomForCausalLM/transformer/layers/16/attention/qkv/CONSTANT_0                            
+      0.0           446162       1631      273.6      231.0       163      11125        408.4  PushPop   TensorRT:BloomForCausalLM/transformer/layers/16/attention/dense/CONSTANT_0                          
+      0.0           446086       1631      273.5      185.0       137      19092        680.9  PushPop   TensorRT:BloomForCausalLM/transformer/layers/13/attention/qkv/CONSTANT_1 + BloomForCausalLM/transfo…
+      0.0           445352       1631      273.1      210.0       163      13488        446.0  PushPop   TensorRT:BloomForCausalLM/transformer/layers/14/attention/dense/CONSTANT_0                          
+      0.0           444310       1631      272.4      221.0       167       4348        289.2  PushPop   TensorRT:BloomForCausalLM/transformer/layers/21/mlp/fc/CONSTANT_0                                   
+      0.0           444064       1631      272.3      209.0       164      17644        518.4  PushPop   TensorRT:BloomForCausalLM/transformer/layers/8/attention/qkv/CONSTANT_0                             
+      0.0           443964       1631      272.2      213.0       163       4417        295.3  PushPop   TensorRT:BloomForCausalLM/transformer/layers/13/mlp/fc/CONSTANT_0                                   
+      0.0           443658       1631      272.0      204.0       162      12428        514.1  PushPop   TensorRT:BloomForCausalLM/transformer/layers/22/attention/dense/CONSTANT_0                          
+      0.0           442869       1631      271.5      237.0       154      18165        512.7  PushPop   TensorRT:BloomForCausalLM/transformer/layers/8/attention/CONSTANT_0                                 
+      0.0           441114       1631      270.5      205.0       153       7621        492.8  PushPop   TensorRT:BloomForCausalLM/transformer/layers/1/attention/CONSTANT_0                                 
+      0.0           440845       1631      270.3      208.0       164       8448        403.7  PushPop   TensorRT:BloomForCausalLM/transformer/layers/5/mlp/fc/CONSTANT_0                                    
+      0.0           440488       1631      270.1      210.0       168       4668        336.3  PushPop   TensorRT:BloomForCausalLM/transformer/layers/3/mlp/fc/CONSTANT_0                                    
+      0.0           439989       1631      269.8      229.0       155       5531        282.4  PushPop   TensorRT:BloomForCausalLM/transformer/layers/15/attention/CONSTANT_0                                
+      0.0           439545       1631      269.5      175.0       138      19801        834.1  PushPop   TensorRT:BloomForCausalLM/transformer/layers/3/attention/qkv/CONSTANT_1 + BloomForCausalLM/transfor…
+      0.0           439119       1631      269.2      222.0       167       5776        282.8  PushPop   TensorRT:BloomForCausalLM/transformer/layers/22/attention/qkv/CONSTANT_0                            
+      0.0           438546       1631      268.9      230.0       156       7555        313.4  PushPop   TensorRT:BloomForCausalLM/transformer/layers/17/attention/CONSTANT_0                                
+      0.0           437950       1631      268.5      200.0       154      24322        672.3  PushPop   TensorRT:BloomForCausalLM/transformer/layers/6/attention/dense/CONSTANT_0                           
+      0.0           435440       1631      267.0      209.0       160      17242        616.1  PushPop   TensorRT:BloomForCausalLM/transformer/layers/7/mlp/proj/CONSTANT_0                                  
+      0.0           433840       1631      266.0      229.0       158      24980        618.0  PushPop   TensorRT:BloomForCausalLM/transformer/layers/16/mlp/proj/CONSTANT_0                                 
+      0.0           433590       1631      265.8      210.0       154       6320        308.3  PushPop   TensorRT:BloomForCausalLM/transformer/layers/13/attention/CONSTANT_0                                
+      0.0           432934       1631      265.4      204.0       138      21455        668.1  PushPop   TensorRT:BloomForCausalLM/transformer/layers/16/mlp/fc/CONSTANT_1 + BloomForCausalLM/transformer/la…
+      0.0           431221       1631      264.4      222.0       164      17135        509.8  PushPop   TensorRT:BloomForCausalLM/transformer/layers/17/attention/dense/CONSTANT_0                          
+      0.0           430202       1631      263.8      213.0       166      18895        547.0  PushPop   TensorRT:BloomForCausalLM/transformer/layers/9/attention/qkv/CONSTANT_0                             
+      0.0           430156       1631      263.7      223.0       165       8178        292.2  PushPop   TensorRT:BloomForCausalLM/transformer/layers/16/mlp/fc/CONSTANT_0                                   
+      0.0           429751       1631      263.5      208.0       165       7650        331.7  PushPop   TensorRT:BloomForCausalLM/transformer/layers/6/attention/qkv/CONSTANT_0                             
+      0.0           428953       1631      263.0      220.0       164       5215        259.8  PushPop   TensorRT:BloomForCausalLM/lm_head/CONSTANT_0                                                        
+      0.0           427736       1631      262.3      224.0       169       7185        221.1  PushPop   TensorRT:BloomForCausalLM/transformer/layers/14/mlp/fc/CONSTANT_0                                   
+      0.0           427245       1631      262.0      219.0       163      17840        462.5  PushPop   TensorRT:BloomForCausalLM/transformer/layers/20/mlp/fc/CONSTANT_0                                   
+      0.0           426789       1631      261.7      219.0       146       4045        262.1  PushPop   TensorRT:BloomForCausalLM/transformer/layers/23/attention/CONSTANT_0                                
+      0.0           426117       1631      261.3      204.0       160       6127        300.8  PushPop   TensorRT:BloomForCausalLM/transformer/layers/12/attention/dense/CONSTANT_0                          
+      0.0           424498       1631      260.3      209.0       168      13470        495.7  PushPop   TensorRT:BloomForCausalLM/transformer/layers/0/mlp/fc/CONSTANT_0                                    
+      0.0           423936       1631      259.9      202.0       155      17087        599.1  PushPop   TensorRT:BloomForCausalLM/transformer/layers/3/mlp/proj/CONSTANT_0                                  
+      0.0           423758       1631      259.8      214.0       165      12968        377.3  PushPop   TensorRT:BloomForCausalLM/transformer/layers/12/mlp/fc/CONSTANT_0                                   
+      0.0           423252       1631      259.5      225.0       164       7372        197.0  PushPop   TensorRT:BloomForCausalLM/transformer/layers/15/attention/qkv/CONSTANT_0                            
+      0.0           422169       1631      258.8      207.0       162       6044        300.3  PushPop   TensorRT:BloomForCausalLM/transformer/layers/18/attention/dense/CONSTANT_0                          
+      0.0           422131       1631      258.8      206.0       164       7598        352.0  PushPop   TensorRT:BloomForCausalLM/transformer/layers/2/attention/qkv/CONSTANT_0                             
+      0.0           420873       1631      258.0      223.0       166      10440        265.0  PushPop   TensorRT:BloomForCausalLM/transformer/layers/17/attention/qkv/CONSTANT_0                            
+      0.0           420563       1631      257.9      213.0       167      14188        389.6  PushPop   TensorRT:BloomForCausalLM/transformer/layers/19/attention/dense/CONSTANT_0                          
+      0.0           419596       1631      257.3      207.0       153       3752        254.8  PushPop   TensorRT:BloomForCausalLM/transformer/layers/11/attention/CONSTANT_0                                
+      0.0           419525       1631      257.2      183.0       138      20400        607.2  PushPop   TensorRT:BloomForCausalLM/transformer/layers/23/attention/qkv/CONSTANT_1 + BloomForCausalLM/transfo…
+      0.0           419508       1631      257.2      205.0       165       5711        294.6  PushPop   TensorRT:BloomForCausalLM/transformer/layers/10/attention/dense/CONSTANT_0                          
+      0.0           419054       1631      256.9      213.0       151       5631        265.0  PushPop   TensorRT:BloomForCausalLM/transformer/layers/21/attention/CONSTANT_0                                
+      0.0           418527       1631      256.6      216.0       157      18291        453.5  PushPop   TensorRT:BloomForCausalLM/transformer/layers/22/attention/CONSTANT_0                                
+      0.0           417415       1631      255.9      221.0       152      17289        428.9  PushPop   TensorRT:BloomForCausalLM/transformer/layers/19/mlp/proj/CONSTANT_0                                 
+      0.0           417157       1631      255.8      233.0       147      11719        296.8  PushPop   TensorRT:BloomForCausalLM/transformer/layers/15/mlp/proj/CONSTANT_0                                 
+      0.0           416992       1631      255.7      179.0       138      18759        579.3  PushPop   TensorRT:BloomForCausalLM/transformer/layers/11/attention/qkv/CONSTANT_1 + BloomForCausalLM/transfo…
+      0.0           416970       1631      255.7      185.0       138      13757        492.8  PushPop   TensorRT:BloomForCausalLM/transformer/layers/21/attention/qkv/CONSTANT_1 + BloomForCausalLM/transfo…
+      0.0           416261       1631      255.2      201.0       161       6018        307.4  PushPop   TensorRT:BloomForCausalLM/transformer/layers/8/attention/dense/CONSTANT_0                           
+      0.0           415477       1631      254.7      232.0       163       3620        136.0  PushPop   TensorRT:BloomForCausalLM/transformer/layers/18/mlp/fc/CONSTANT_0                                   
+      0.0           414822       1631      254.3      211.0       161      12579        367.1  PushPop   TensorRT:BloomForCausalLM/transformer/layers/22/mlp/proj/CONSTANT_0                                 
+      0.0           414531       1631      254.2      211.0       156      14787        370.3  PushPop   TensorRT:BloomForCausalLM/transformer/layers/12/mlp/proj/CONSTANT_0                                 
+      0.0           414442       1631      254.1      216.0       157      17487        461.9  PushPop   TensorRT:BloomForCausalLM/transformer/layers/21/mlp/proj/CONSTANT_0                                 
+      0.0           414056       1631      253.9      194.0       138      10443        418.6  PushPop   TensorRT:BloomForCausalLM/transformer/layers/17/attention/qkv/CONSTANT_1 + BloomForCausalLM/transfo…
+      0.0           413994       1631      253.8      203.0       165       7454        343.6  PushPop   TensorRT:BloomForCausalLM/transformer/layers/2/attention/dense/CONSTANT_0                           
+      0.0           413393       1631      253.5      228.0       153       6804        237.0  PushPop   TensorRT:BloomForCausalLM/transformer/layers/18/attention/CONSTANT_0                                
+      0.0           412881       1631      253.1      210.0       145      13865        351.0  PushPop   TensorRT:BloomForCausalLM/transformer/layers/12/attention/CONSTANT_0                                
+      0.0           412221       1631      252.7      204.0       164      17349        495.2  PushPop   TensorRT:BloomForCausalLM/transformer/layers/4/mlp/fc/CONSTANT_0                                    
+      0.0           412037       1631      252.6      212.0       160       8632        249.2  PushPop   TensorRT:BloomForCausalLM/transformer/layers/22/mlp/fc/CONSTANT_0                                   
+      0.0           411960       1631      252.6      208.0       165      13348        441.9  PushPop   TensorRT:BloomForCausalLM/transformer/layers/21/attention/dense/CONSTANT_0                          
+      0.0           411342       1631      252.2      197.0       139       6591        376.0  PushPop   TensorRT:BloomForCausalLM/transformer/layers/19/attention/qkv/CONSTANT_1 + BloomForCausalLM/transfo…
+      0.0           411279       1631      252.2      212.0       166      14312        357.8  PushPop   TensorRT:BloomForCausalLM/transformer/layers/23/attention/dense/CONSTANT_0                          
+      0.0           411143       1631      252.1      215.0       162      17952        444.9  PushPop   TensorRT:BloomForCausalLM/transformer/layers/20/mlp/proj/CONSTANT_0                                 
+      0.0           410381       1631      251.6      191.0       138       6265        342.6  PushPop   TensorRT:BloomForCausalLM/transformer/layers/15/attention/qkv/CONSTANT_1 + BloomForCausalLM/transfo…
+      0.0           410236       1631      251.5      206.0       151      17128        520.6  PushPop   TensorRT:BloomForCausalLM/transformer/layers/0/attention/CONSTANT_0                                 
+      0.0           410203       1631      251.5      222.0       167       8723        224.3  PushPop   TensorRT:BloomForCausalLM/transformer/layers/18/mlp/proj/CONSTANT_0                                 
+      0.0           409887       1631      251.3      227.0       163        822         80.0  PushPop   TensorRT:BloomForCausalLM/transformer/layers/19/attention/qkv/CONSTANT_0                            
+      0.0           409416       1631      251.0      213.0       147       7026        189.0  PushPop   TensorRT:BloomForCausalLM/transformer/layers/14/attention/CONSTANT_0                                
+      0.0           409310       1631      251.0      174.0       138      17591        553.7  PushPop   TensorRT:BloomForCausalLM/transformer/layers/7/attention/qkv/CONSTANT_1 + BloomForCausalLM/transfor…
+      0.0           408798       1631      250.6      204.0       147       4096        260.6  PushPop   TensorRT:BloomForCausalLM/transformer/layers/5/attention/CONSTANT_0                                 
+      0.0           408110       1631      250.2      175.0       139      17522        718.2  PushPop   TensorRT:BloomForCausalLM/transformer/layers/6/attention/qkv/CONSTANT_1 + BloomForCausalLM/transfor…
+      0.0           407420       1631      249.8      212.0       145       5936        184.5  PushPop   TensorRT:BloomForCausalLM/transformer/layers/14/mlp/proj/CONSTANT_0                                 
+      0.0           407065       1631      249.6      208.0       151      17103        425.1  PushPop   TensorRT:BloomForCausalLM/transformer/layers/9/mlp/proj/CONSTANT_0                                  
+      0.0           406819       1631      249.4      206.0       150      16726        426.5  PushPop   TensorRT:BloomForCausalLM/transformer/layers/6/mlp/proj/CONSTANT_0                                  
+      0.0           406424       1631      249.2      232.0       151       7050        185.5  PushPop   TensorRT:BloomForCausalLM/transformer/layers/17/mlp/proj/CONSTANT_0                                 
+      0.0           405955       1631      248.9      215.0       167        787         78.4  PushPop   TensorRT:BloomForCausalLM/transformer/layers/23/attention/qkv/CONSTANT_0                            
+      0.0           405543       1631      248.6      227.0       152        743         82.9  PushPop   TensorRT:BloomForCausalLM/transformer/layers/16/attention/CONSTANT_0                                
+      0.0           405467       1631      248.6      207.0       164      14442        360.8  PushPop   TensorRT:BloomForCausalLM/transformer/layers/15/attention/dense/CONSTANT_0                          
+      0.0           404940       1631      248.3      211.0       168       3227        120.3  PushPop   TensorRT:BloomForCausalLM/transformer/layers/10/mlp/fc/CONSTANT_0                                   
+      0.0           404632       1631      248.1      198.0       162       6028        303.9  PushPop   TensorRT:BloomForCausalLM/transformer/layers/4/attention/dense/CONSTANT_0                           
+      0.0           404448       1631      248.0      213.0       162        939         84.3  PushPop   TensorRT:BloomForCausalLM/transformer/layers/11/attention/qkv/CONSTANT_0                            
+      0.0           404344       1631      247.9      207.0       148      11211        283.6  PushPop   TensorRT:BloomForCausalLM/transformer/layers/10/attention/CONSTANT_0                                
+      0.0           404224       1631      247.8      201.0       149       3940        259.3  PushPop   TensorRT:BloomForCausalLM/transformer/layers/3/attention/CONSTANT_0                                 
+      0.0           403689       1631      247.5      209.0       165       5978        177.7  PushPop   TensorRT:BloomForCausalLM/transformer/layers/8/mlp/fc/CONSTANT_0                                    
+      0.0           403499       1631      247.4      206.0       167      13898        347.1  PushPop   TensorRT:BloomForCausalLM/transformer/layers/9/attention/dense/CONSTANT_0                           
+      0.0           403176       1631      247.2      185.0       138      15200        447.6  PushPop   TensorRT:BloomForCausalLM/transformer/layers/20/mlp/fc/CONSTANT_1 + BloomForCausalLM/transformer/la…
+      0.0           402568       1631      246.8      183.0       138      16185        556.3  PushPop   TensorRT:BloomForCausalLM/transformer/layers/20/attention/qkv/CONSTANT_1 + BloomForCausalLM/transfo…
+      0.0           402308       1631      246.7      182.0       137      13047        416.8  PushPop   TensorRT:BloomForCausalLM/transformer/layers/14/mlp/fc/CONSTANT_1 + BloomForCausalLM/transformer/la…
+      0.0           402051       1631      246.5      208.0       168       6050        177.8  PushPop   TensorRT:BloomForCausalLM/transformer/layers/11/attention/dense/CONSTANT_0                          
+      0.0           401203       1631      246.0      213.0       165        719         76.3  PushPop   TensorRT:BloomForCausalLM/transformer/layers/21/attention/qkv/CONSTANT_0                            
+      0.0           401022       1631      245.9      207.0       164       7571        235.4  PushPop   TensorRT:BloomForCausalLM/transformer/layers/2/mlp/fc/CONSTANT_0                                    
+      0.0           400909       1631      245.8      208.0       143       5428        153.8  PushPop   TensorRT:BloomForCausalLM/transformer/layers/13/attention/dense/CONSTANT_0                          
+      0.0           400380       1631      245.5      208.0       145      17530        437.0  PushPop   TensorRT:BloomForCausalLM/transformer/layers/5/mlp/proj/CONSTANT_0                                  
+      0.0           400328       1631      245.4      175.0       138      17732        545.2  PushPop   TensorRT:BloomForCausalLM/transformer/layers/6/mlp/fc/CONSTANT_1 + BloomForCausalLM/transformer/lay…
+      0.0           400013       1631      245.3      174.0       137       6709        412.3  PushPop   TensorRT:BloomForCausalLM/transformer/layers/5/attention/qkv/CONSTANT_1 + BloomForCausalLM/transfor…
+      0.0           399961       1631      245.2      205.0       147      16161        401.7  PushPop   TensorRT:BloomForCausalLM/transformer/layers/8/mlp/proj/CONSTANT_0                                  
+      0.0           399826       1631      245.1      190.0       137       4456        285.1  PushPop   TensorRT:BloomForCausalLM/transformer/layers/18/mlp/fc/CONSTANT_1 + BloomForCausalLM/transformer/la…
+      0.0           398660       1631      244.4      206.0       147      13467        356.8  PushPop   TensorRT:BloomForCausalLM/transformer/layers/2/attention/CONSTANT_0                                 
+      0.0           398361       1631      244.2      178.0       137       6139        349.3  PushPop   TensorRT:BloomForCausalLM/transformer/layers/9/attention/qkv/CONSTANT_1 + BloomForCausalLM/transfor…
+      0.0           397848       1631      243.9      174.0       138       8137        468.9  PushPop   TensorRT:BloomForCausalLM/transformer/layers/0/mlp/fc/CONSTANT_1 + BloomForCausalLM/transformer/lay…
+      0.0           396709       1631      243.2      206.0       165      10968        276.0  PushPop   TensorRT:BloomForCausalLM/transformer/layers/3/attention/qkv/CONSTANT_0                             
+      0.0           396524       1631      243.1      186.0       138      19945        644.3  PushPop   TensorRT:BloomForCausalLM/transformer/layers/17/mlp/fc/CONSTANT_1 + BloomForCausalLM/transformer/la…
+      0.0           396303       1631      243.0      182.0       137       6666        314.8  PushPop   TensorRT:BloomForCausalLM/transformer/layers/22/mlp/fc/CONSTANT_1 + BloomForCausalLM/transformer/la…
+      0.0           395137       1631      242.3      208.0       164       3123        105.0  PushPop   TensorRT:BloomForCausalLM/transformer/layers/6/mlp/fc/CONSTANT_0                                    
+      0.0           395055       1631      242.2      209.0       148       5235        144.6  PushPop   TensorRT:BloomForCausalLM/transformer/layers/23/mlp/proj/CONSTANT_0                                 
+      0.0           394557       1631      241.9      211.0       168        781         75.4  PushPop   TensorRT:BloomForCausalLM/transformer/layers/7/attention/qkv/CONSTANT_0                             
+      0.0           394130       1631      241.6      206.0       150       6621        177.4  PushPop   TensorRT:BloomForCausalLM/transformer/layers/6/attention/CONSTANT_0                                 
+      0.0           393333       1631      241.2      208.0       149        926         83.0  PushPop   TensorRT:BloomForCausalLM/transformer/layers/10/mlp/proj/CONSTANT_0                                 
+      0.0           393126       1631      241.0      181.0       137      17594        516.2  PushPop   TensorRT:BloomForCausalLM/transformer/layers/21/mlp/fc/CONSTANT_1 + BloomForCausalLM/transformer/la…
+      0.0           392997       1631      241.0      182.0       141       6474        299.0  PushPop   TensorRT:BloomForCausalLM/transformer/layers/10/mlp/fc/CONSTANT_1 + BloomForCausalLM/transformer/la…
+      0.0           392502       1631      240.7      208.0       151       8617        220.1  PushPop   TensorRT:BloomForCausalLM/transformer/layers/4/mlp/proj/CONSTANT_0                                  
+      0.0           392265       1631      240.5      199.0       138      12348        387.7  PushPop   TensorRT:BloomForCausalLM/transformer/layers/15/mlp/fc/CONSTANT_1 + BloomForCausalLM/transformer/la…
+      0.0           391360       1631      240.0      183.0       138       6341        283.0  PushPop   TensorRT:BloomForCausalLM/transformer/layers/12/mlp/fc/CONSTANT_1 + BloomForCausalLM/transformer/la…
+      0.0           390288       1631      239.3      200.0       163      12674        318.1  PushPop   TensorRT:BloomForCausalLM/transformer/layers/7/attention/dense/CONSTANT_0                           
+      0.0           390015       1631      239.1      201.0       146      18058        447.3  PushPop   TensorRT:BloomForCausalLM/transformer/layers/2/mlp/proj/CONSTANT_0                                  
+      0.0           388259       1631      238.0      206.0       164        749         74.0  PushPop   TensorRT:BloomForCausalLM/transformer/layers/5/attention/qkv/CONSTANT_0                             
+      0.0           385106       1631      236.1      199.0       164      12375        309.4  PushPop   TensorRT:BloomForCausalLM/transformer/layers/1/attention/dense/CONSTANT_0                           
+      0.0           382743       1631      234.7      172.0       137      17266        594.7  PushPop   TensorRT:BloomForCausalLM/transformer/layers/4/attention/qkv/CONSTANT_1 + BloomForCausalLM/transfor…
+      0.0           381062       1631      233.6      207.0       167        722         68.0  PushPop   TensorRT:BloomForCausalLM/transformer/layers/1/attention/qkv/CONSTANT_0                             
+      0.0           380773       1631      233.5      177.0       139       4643        282.1  PushPop   TensorRT:BloomForCausalLM/transformer/layers/8/mlp/fc/CONSTANT_1 + BloomForCausalLM/transformer/lay…
+      0.0           380736       1631      233.4      175.0       138      17443        490.0  PushPop   TensorRT:BloomForCausalLM/transformer/layers/9/mlp/fc/CONSTANT_1 + BloomForCausalLM/transformer/lay…
+      0.0           380671       1631      233.4      202.0       151       2550         97.1  PushPop   TensorRT:BloomForCausalLM/transformer/layers/4/attention/CONSTANT_0                                 
+      0.0           380431       1631      233.3      200.0       163       5953        159.5  PushPop   TensorRT:BloomForCausalLM/transformer/layers/5/attention/dense/CONSTANT_0                           
+      0.0           379195       1631      232.5      203.0       161       1012         78.0  PushPop   TensorRT:BloomForCausalLM/transformer/layers/3/attention/dense/CONSTANT_0                           
+      0.0           378430       1631      232.0      185.0       137      10992        291.6  PushPop   TensorRT:BloomForCausalLM/transformer/layers/19/mlp/fc/CONSTANT_1 + BloomForCausalLM/transformer/la…
+      0.0           375474       1631      230.2      187.0       138       7278        227.4  PushPop   TensorRT:BloomForCausalLM/transformer/layers/22/attention/qkv/CONSTANT_1 + BloomForCausalLM/transfo…
+      0.0           374718       1631      229.7      179.0       138      15238        456.6  PushPop   TensorRT:BloomForCausalLM/transformer/layers/8/attention/qkv/CONSTANT_1 + BloomForCausalLM/transfor…
+      0.0           374236       1631      229.5      171.0       137       9574        334.8  PushPop   TensorRT:BloomForCausalLM/transformer/layers/4/mlp/fc/CONSTANT_1 + BloomForCausalLM/transformer/lay…
+      0.0           373466       1631      229.0      195.0       138       5173        168.3  PushPop   TensorRT:BloomForCausalLM/transformer/layers/16/attention/qkv/CONSTANT_1 + BloomForCausalLM/transfo…
+      0.0           373253       1631      228.8      191.0       137       5060        187.8  PushPop   TensorRT:BloomForCausalLM/transformer/layers/18/attention/qkv/CONSTANT_1 + BloomForCausalLM/transfo…
+      0.0           371294       1631      227.6      201.0       153        937         71.6  PushPop   TensorRT:BloomForCausalLM/transformer/layers/0/mlp/proj/CONSTANT_0                                  
+      0.0           371292       1631      227.6      178.0       137      18908        469.4  PushPop   TensorRT:BloomForCausalLM/transformer/layers/23/mlp/fc/CONSTANT_1 + BloomForCausalLM/transformer/la…
+      0.0           371047       1631      227.5      185.0       138       8172        225.0  PushPop   TensorRT:BloomForCausalLM/transformer/layers/14/attention/qkv/CONSTANT_1 + BloomForCausalLM/transfo…
+      0.0           370673       1631      227.3      177.0       138      18161        476.3  PushPop   TensorRT:BloomForCausalLM/transformer/layers/0/attention/qkv/CONSTANT_1 + BloomForCausalLM/transfor…
+      0.0           366593       1631      224.8      173.0       137       4133        265.4  PushPop   TensorRT:BloomForCausalLM/transformer/layers/2/mlp/fc/CONSTANT_1 + BloomForCausalLM/transformer/lay…
+      0.0           366007       1631      224.4      179.0       137      10954        287.1  PushPop   TensorRT:BloomForCausalLM/transformer/layers/10/attention/qkv/CONSTANT_1 + BloomForCausalLM/transfo…
+      0.0           365220       1631      223.9      176.0       137       8171        281.8  PushPop   TensorRT:BloomForCausalLM/transformer/layers/7/mlp/fc/CONSTANT_1 + BloomForCausalLM/transformer/lay…
+      0.0           364353       1631      223.4      182.0       137       3255        114.0  PushPop   TensorRT:BloomForCausalLM/transformer/layers/13/mlp/fc/CONSTANT_1 + BloomForCausalLM/transformer/la…
+      0.0           363664       1631      223.0      176.0       138       3630        144.1  PushPop   TensorRT:BloomForCausalLM/transformer/layers/12/attention/qkv/CONSTANT_1 + BloomForCausalLM/transfo…
+      0.0           361659       1631      221.7      179.0       138       3499        118.8  PushPop   TensorRT:BloomForCausalLM/transformer/layers/11/mlp/fc/CONSTANT_1 + BloomForCausalLM/transformer/la…
+      0.0           357925       1631      219.5      176.0       140      12924        335.3  PushPop   TensorRT:BloomForCausalLM/transformer/layers/3/mlp/fc/CONSTANT_1 + BloomForCausalLM/transformer/lay…
+      0.0           357543       1631      219.2      172.0       139      12382        348.2  PushPop   TensorRT:BloomForCausalLM/transformer/layers/2/attention/qkv/CONSTANT_1 + BloomForCausalLM/transfor…
+      0.0           356650       1631      218.7      171.0       138      13305        439.6  PushPop   TensorRT:BloomForCausalLM/transformer/layers/1/mlp/fc/CONSTANT_1 + BloomForCausalLM/transformer/lay…
+      0.0           348310       1631      213.6      173.0       137       8203        212.5  PushPop   TensorRT:BloomForCausalLM/transformer/layers/5/mlp/fc/CONSTANT_1 + BloomForCausalLM/transformer/lay…
+      0.0            91505         49     1867.4     1577.0      1303       9808       1321.1  StartEnd  myelinBinaryGraphCreate                                                                             
+
+Processing [report1.sqlite] with [/opt/nvidia/nsight-systems/2024.2.1/host-linux-x64/reports/osrt_sum.py]... 
+
+ ** OS Runtime Summary (osrt_sum):
+
+ Time (%)  Total Time (ns)  Num Calls    Avg (ns)      Med (ns)    Min (ns)   Max (ns)    StdDev (ns)            Name         
+ --------  ---------------  ---------  ------------  ------------  --------  -----------  ------------  ----------------------
+     30.2      47030300023         43  1093727907.5       63085.0     10220  23436217041  3832372803.5  pthread_cond_wait     
+     28.6      44514424168         14  3179601726.3  2002053627.5  22405904  22259276596  5533558609.3  select                
+     28.1      43845665349         94   466443248.4       66954.5      1261  21285680638  3086929131.3  epoll_wait            
+     11.1      17271595414        242    71370229.0   100164560.5      2444    100256117    43391014.3  poll                  
+      0.9       1406274651       9691      145111.4        2168.0      1001   1152289593    11747871.6  read                  
+      0.8       1191309950       2659      448029.3       58492.0      1000    516607070    10065110.3  ioctl                 
+      0.1        152551808         47     3245783.1        5405.0      2251    151569380    22105639.0  mmap                  
+      0.1        144163040      23308        6185.1        4205.0      1473       104899        4465.1  stat64                
+      0.0         68587249       4561       15037.8       12802.0      1889      4119507       62317.8  open64                
+      0.0         66773582      22715        2939.6        2785.0      2248        28472        1051.4  lstat64               
+      0.0         23139881       8551        2706.1        2505.0      1689        85192        1487.8  fstat64               
+      0.0         16918640          1    16918640.0    16918640.0  16918640     16918640           0.0  fork                  
+      0.0          7362363         85       86616.0       84667.0      2462       883761      123483.1  munmap                
+      0.0          5071337          1     5071337.0     5071337.0   5071337      5071337           0.0  nanosleep             
+      0.0          4944215         13      380324.2      389629.0    178926       476805       87216.8  pthread_rwlock_rdlock 
+      0.0          4822684        797        6051.0        5830.0      3092        26403        2060.1  openat                
+      0.0          4489709         11      408155.4      204060.0     19382      1185132      424310.1  pthread_join          
+      0.0          3377004        240       14070.9        5889.0      3054      1230188       79590.6  mmap64                
+      0.0          3059262          3     1019754.0      991873.0      5587      2061802     1028391.0  pthread_mutex_lock    
+      0.0          2122678        429        4948.0        3776.0      1360        27801        3007.5  stat                  
+      0.0          2092011        131       15969.5       13579.0      1131        51042       10248.4  write                 
+      0.0          1300209         10      130020.9       82362.0     52311       534104      145457.2  sem_timedwait         
+      0.0          1284688        110       11679.0        6924.0      1049        76863       13931.8  fgets                 
+      0.0          1247173         11      113379.4       63825.0     49448       585113      157351.0  pthread_create        
+      0.0          1231667          7      175952.4      175391.0    160910       194825       12634.0  usleep                
+      0.0          1003383        133        7544.2        3302.0      1630        49880        9275.1  connect               
+      0.0           657528         89        7388.0        4576.0      2101        34723        6729.6  fopen                 
+      0.0           643646        124        5190.7        2460.0      2093        53328        7682.0  open                  
+      0.0           619883          4      154970.8        3813.0      2418       609839      303246.7  recv                  
+      0.0           539975        145        3724.0        2917.0      2181        16520        2226.5  socket                
+      0.0           522285         22       23740.2       24787.5      1835        49042       12791.3  writev                
+      0.0           472180        178        2652.7        1901.5      1350        17046        2208.6  fclose                
+      0.0           420109         49        8573.7        3033.0      2020        31642        7732.7  fopen64               
+      0.0           379741         50        7594.8        6237.5      1019        27220        6009.6  pthread_cond_signal   
+      0.0           375496          5       75099.2       72927.0     67495        86322        7214.9  sleep                 
+      0.0           336873          9       37430.3       20828.0      2452       187143       59887.6  pthread_rwlock_wrlock 
+      0.0           290558         39        7450.2        6496.0      1107        13877        2735.1  pthread_cond_broadcast
+      0.0           206513         91        2269.4        2100.0      1882         7140         601.9  openat64              
+      0.0           182059         21        8669.5        7234.0      4887        25274        4418.8  fstatat               
+      0.0           179944         21        8568.8        5039.0      1224        21236        7528.5  putc                  
+      0.0           107510         50        2150.2        1806.0      1181         4312         929.9  epoll_ctl             
+      0.0            97750         17        5750.0        4999.0      1232        14898        5049.1  fread                 
+      0.0            97239          3       32413.0       31960.0     29226        36053        3436.0  waitpid               
+      0.0            96593         74        1305.3        1267.0      1001         2337         233.1  fcntl                 
+      0.0            84945         13        6534.2        5822.0      3214        11143        2380.7  pipe2                 
+      0.0            82241          7       11748.7        8264.0      2419        27708        9934.2  shutdown              
+      0.0            73215          6       12202.5       11889.5      7153        18888        5099.9  posix_fallocate       
+      0.0            72941         37        1971.4        1193.0      1142        18035        3189.4  fputs                 
+      0.0            60103         40        1502.6        1163.0      1002         5863         875.4  sigaction             
+      0.0            56961          3       18987.0       15566.0      8500        32895       12552.1  send                  
+      0.0            41155         12        3429.6        3597.5      1774         5646        1295.9  flock                 
+      0.0            37386          7        5340.9        2912.0      2130        18364        5821.2  bind                  
+      0.0            35720         20        1786.0        1746.5      1286         2926         502.4  fstat                 
+      0.0            30914          8        3864.3        3703.5      2782         6347        1097.0  lstat                 
+      0.0            28069          5        5613.8        6438.0      3230         7381        1973.3  pipe                  
+      0.0            26630          2       13315.0       13315.0     12082        14548        1743.7  shmdt                 
+      0.0            19616          4        4904.0        5065.5      3298         6187        1194.9  futex                 
+      0.0            15533          2        7766.5        7766.5      7723         7810          61.5  shmget                
+      0.0            12982          6        2163.7        2202.5      1763         2519         279.0  listen                
+      0.0            11810          9        1312.2        1207.0      1010         2149         333.3  dup                   
+      0.0            11563          2        5781.5        5781.5      5170         6393         864.8  shmat                 
+      0.0            10296          6        1716.0        1635.5      1254         2392         457.0  pthread_mutex_trylock 
+      0.0             9391          5        1878.2        1972.0      1206         2722         629.2  dup2                  
+      0.0             7931          1        7931.0        7931.0      7931         7931           0.0  accept                
+      0.0             7539          3        2513.0        1392.0      1042         5105        2251.5  fwrite                
+      0.0             6265          1        6265.0        6265.0      6265         6265           0.0  ftruncate             
+      0.0             5792          1        5792.0        5792.0      5792         5792           0.0  fstatat64             
+      0.0             5115          4        1278.8        1278.5      1210         1348          64.9  shmctl                
+      0.0             2022          1        2022.0        2022.0      2022         2022           0.0  getc                  
+      0.0             1510          1        1510.0        1510.0      1510         1510           0.0  fputc                 
+      0.0             1146          1        1146.0        1146.0      1146         1146           0.0  signal                
+      0.0             1101          1        1101.0        1101.0      1101         1101           0.0  fflush                
+
+Processing [report1.sqlite] with [/opt/nvidia/nsight-systems/2024.2.1/host-linux-x64/reports/cuda_api_sum.py]... 
+
+ ** CUDA API Summary (cuda_api_sum):
+
+ Time (%)  Total Time (ns)  Num Calls   Avg (ns)     Med (ns)    Min (ns)   Max (ns)   StdDev (ns)                 Name               
+ --------  ---------------  ---------  -----------  -----------  ---------  ---------  -----------  ----------------------------------
+     66.4       7622201130       1631    4673329.9    3929013.0       8103   90262933    7293826.7  cudaEventSynchronize              
+     11.6       1327260458     220165       6028.5       5504.0       3732   15984907      39595.9  cudaLaunchKernel                  
+      7.4        844464860     159838       5283.3       4924.0       3454     390350       3740.1  cuLaunchKernel                    
+      4.6        533097903         11   48463445.7      15488.0       5030  530250765  159791688.9  cudaHostAlloc                     
+      3.4        388791097       3704     104965.2      11664.0       3133  349753106    5746632.4  cudaMemcpyAsync                   
+      3.0        348542225          1  348542225.0  348542225.0  348542225  348542225          0.0  cudaMemPoolTrimTo_v11020          
+      1.7        191231717         11   17384701.5      19735.0       5357  189873077   57208439.0  cudaFreeHost                      
+      0.5         56451834      81554        692.2        634.0        530     275592       1097.5  cudaStreamIsCapturing_v10000      
+      0.5         54517497       1801      30270.7       4171.0       1258    8866316     275705.9  cudaMallocAsync_v11020            
+      0.2         27733442         29     956325.6       8998.0        788   16504653    3200945.1  cudaFree                          
+      0.1         16379195         12    1364932.9     177867.5      70542   13737119    3903866.9  cuLibraryUnload                   
+      0.1         15254647         51     299110.7     273418.0     245469     995592     109860.7  cuModuleLoadData                  
+      0.1          9431319         51     184927.8     165980.0     141372     439238      61032.6  cuModuleUnload                    
+      0.1          8418172       3262       2580.7       2323.0       1754      28194       1428.1  cudaEventRecord                   
+      0.1          7672592       1372       5592.3       4509.5        236      74208       3991.2  cudaMemsetAsync                   
+      0.1          7183207       1801       3988.5       2583.0       1076     765834      24362.0  cudaFreeAsync_v11020              
+      0.0          3229107         19     169953.0      12142.0       3655    1809659     409885.2  cudaMalloc                        
+      0.0          3208021         32     100250.7       3947.5       3312    2889602     509918.2  cudaStreamCreateWithFlags         
+      0.0          2541890         49      51875.3      12843.0      10808    1531685     218449.8  cuStreamCreate                    
+      0.0          1128178        142       7944.9       8211.0       1474      28575       6538.9  cudaDeviceSynchronize             
+      0.0           919694       2754        333.9        276.0        190      21363        605.2  cuGetProcAddress_v2               
+      0.0           908210        131       6932.9       6459.0       1070     125033      10763.6  cudaStreamSynchronize             
+      0.0           852442        890        957.8        732.5        551      21430        952.5  cudaEventCreateWithFlags          
+      0.0           667088        890        749.5        596.0        536      17929        940.1  cudaEventDestroy                  
+      0.0           437890         49       8936.5       6220.0       4882      97654      13332.3  cuStreamDestroy_v2                
+      0.0           327049         36       9084.7       5402.0       4397      41302       9139.5  cudaStreamDestroy                 
+      0.0           229009          9      25445.4      23055.0      15288      43251      10444.3  cudaMemGetInfo                    
+      0.0            99528         49       2031.2       1996.0       1607       2845        233.4  cuEventCreate                     
+      0.0            56812         49       1159.4        665.0        458      18386       2650.8  cuEventDestroy_v2                 
+      0.0            56321         98        574.7        641.0        276       1299        209.5  cuCtxSetCurrent                   
+      0.0            53012          3      17670.7      19023.0      11378      22611       5737.3  cudaStreamCreate                  
+      0.0            52435          4      13108.8       1885.5        535      48129      23355.5  cudaDeviceGetDefaultMemPool_v11020
+      0.0            40991          1      40991.0      40991.0      40991      40991          0.0  cudaStreamCreateWithPriority      
+      0.0            32488          7       4641.1       4118.0       3586       8002       1534.1  cuInit                            
+      0.0            12385          1      12385.0      12385.0      12385      12385          0.0  cudaMemPoolSetAttribute_v11020    
+      0.0             6598          9        733.1        349.0        277       3711       1119.8  cuModuleGetLoadingMode            
+      0.0             2722          2       1361.0       1361.0        510       2212       1203.5  cudaMemPoolGetAttribute_v11020    
+
+Processing [report1.sqlite] with [/opt/nvidia/nsight-systems/2024.2.1/host-linux-x64/reports/cuda_gpu_kern_sum.py]... 
+
+ ** CUDA GPU Kernel Summary (cuda_gpu_kern_sum):
+
+ Time (%)  Total Time (ns)  Instances  Avg (ns)   Med (ns)   Min (ns)  Max (ns)  StdDev (ns)                                                  Name                                                
+ --------  ---------------  ---------  ---------  ---------  --------  --------  -----------  ----------------------------------------------------------------------------------------------------
+     31.2       3872781170       1631  2374482.6  2349145.0   2339066   3643091     156950.8  std::enable_if<T7, void>::type internal::gemvx::kernel<int, int, __half, float, float, float, (bool…
+     25.1       3112104814     115920    26847.0    29983.0     11199     48991      11001.5  void gemv2T_kernel_val<int, int, __half, __half, __half, float, (int)128, (int)16, (int)4, (int)4, …
+     11.6       1438087925      38640    37217.6    37119.0     35935     42975        722.2  std::enable_if<!T7, void>::type internal::gemvx::kernel<int, int, __half, __half, __half, float, (b…
+      7.5        927865038      38640    24013.1    24895.0     13631     36479       2993.8  void tensorrt_llm::kernels::mmha::masked_multihead_attention_kernel<unsigned short, unsigned short,…
+      6.4        795117431       1631   487503.0   480881.0    452242    694347      31304.3  void tensorrt_llm::kernels::batchApplyPenalty<float>(const T1 *const *, T1 *, const T1 *, int *, co…
+      4.3        539255469        504  1069951.3  1213723.0     57822   1737579     483031.3  void tensorrt_llm::kernels::softmax_kernel<__half, float, (int)1>(T1 *, const T2 *, const T1 *, con…
+      2.6        321497699      78288     4106.6     2848.0      2143    163835      11464.0  generatedNativePointwise                                                                            
+      2.3        283188720      75670     3742.4     3680.0      3391      6240        311.6  __myl_bb1_1_AddAddCasMeaSubMulMeaAddSqrDivMulCasMulAdd_com_vec                                      
+      2.0        250734229       1488   168504.2   178971.0     40479    360181      85116.7  turing_fp16_s1688gemm_fp16_128x128_ldg8_f2f_tn                                                      
+      1.3        155783351        336   463640.9   504576.5    180123    659084     138873.0  void cutlass::Kernel<cutlass_75_tensorop_s1688gemm_f16_64x64_tn_align1>(T1::Params)                 
+      1.0        122660188       1631    75205.5    73758.0     67390    119196       6584.9  void tensorrt_llm::kernels::topKStage1<float, (int)128, (int)8>(const T1 *, const T1 *const *, T1 *…
+      0.9        111682422       1631    68474.8    67134.0     61150    110012       6157.2  void tensorrt_llm::kernels::addBiasSoftMax<float>(T1 *, T1 **, T1 *, const T1 *, const int *, const…
+      0.8         93891573        336   279439.2   297623.0    114236    387092      76500.9  void cutlass::Kernel<cutlass_75_tensorop_f16_s1688gemm_f16_64x64_nn_align1>(T1::Params)             
+      0.6         74682215        504   148179.0   158683.0     36543    213434      47060.6  void tensorrt_llm::kernels::add_fusedQKV_bias_transpose_kernel<__half, (bool)0>(T1 *, T1 *, T1 *, T…
+      0.6         70753076        264   268004.1   272856.0    144603    336149      48429.5  turing_fp16_s1688gemm_fp16_256x64_sliced1x2_ldg8_f2f_tn                                             
+      0.3         37054147        216   171547.0   157067.0     79389    281656      55531.4  turing_fp16_s1688gemm_fp16_256x128_ldg8_f2f_tn                                                      
+      0.2         29801657        120   248347.1   263400.0     71838    403188     103485.9  void cutlass::Kernel<cutlass_75_tensorop_s1688gemm_f16_128x128_tn_align2>(T1::Params)               
+      0.2         27570346       1610    17124.4    16832.0     15520     26463       1301.0  __myl_bb1_1_GatCasMeaSubMulMeaAddSqrDivMulCasMulAddCasMeaSubMulMeaAddSqrDivMulCasMulAdd_com         
+      0.2         22416445        987    22711.7    25535.0      6175     31935       6984.1  __myl_bb1_1_AddAddCasMeaSubMulMeaAddSqrDivMulCasMulAdd_vec                                          
+      0.1         16619304        120   138494.2   135068.0     36479    217145      61638.3  void cutlass::Kernel<cutlass_75_tensorop_f16_s1688gemm_f16_64x64_nn_align2>(T1::Params)             
+      0.1         12346510        504    24497.0    29263.0      4512     33215       8059.6  void tensorrt_llm::kernels::transpose4dBatchMajorKVCache<__half, __half, tensorrt_llm::kernels::KVB…
+      0.1         11452381       1631     7021.7     6848.0      6431     23647        804.4  void tensorrt_llm::kernels::topKStage2Sampling<float, (int)128, (int)8>(const int *, T1 *, int **, …
+      0.1          9902909        504    19648.6    21215.5      5760     27583       5912.5  void tensorrt_llm::kernels::transpose_remove_padding<__half2>(const T1 *, T1 *, int, int, int, int,…
+      0.1          7889942       1631     4837.5     4736.0      4320     16096        608.7  tensorrt_llm::kernels::copyNextStepIds(int *, const int *const *, const int *, const int *, const i…
+      0.1          6710982       1631     4114.6     4032.0      3808     14688        362.0  void tensorrt_llm::runtime::kernels::<unnamed>::reduceSum<int>(T1 *, const T1 *, unsigned long)     
+      0.0          5989266       1631     3672.1     3552.0      3328     13823        636.7  tensorrt_llm::kernels::lengthCriterion(tensorrt_llm::kernels::FinishedState *, int *, const unsigne…
+      0.0          5414616       1673     3236.5     3168.0      2560      5440        320.5  void cub::CUB_200200_700_800_860_890_900_NS::DeviceScanKernel<cub::CUB_200200_700_800_860_890_900_N…
+      0.0          5282066       1610     3280.8     3232.0      2976      5280        281.5  __myl_bb1_2_AddAddCasMeaSubMulMea_com_vec                                                           
+      0.0          4557119        504     9041.9     9471.5      3424     13568       2953.1  void tensorrt_llm::kernels::computeAttentionMask<__half>(T1 *, const int *, int, int, tensorrt_llm:…
+      0.0          4181244       1610     2597.0     2560.0      2400      4224        202.1  __myl_bb1_1_AddSqrDivMulCasMulAddSubGat_com                                                         
+      0.0          2868555       1652     1736.4     1696.0      1536      2752        156.4  void tensorrt_llm::runtime::kernels::<unnamed>::add<int>(T1 *, unsigned long, T1)                   
+      0.0          2736972       1008     2715.3     2656.0      2015      4512        438.1  void tensorrt_llm::kernels::computeSeqOffsets<(int)256>(int *, const int *, int)                    
+      0.0          2615923       1695     1543.3     1504.0      1312      3360        154.7  void tensorrt_llm::runtime::kernels::<unnamed>::fill<int>(T1 *, unsigned long, T1)                  
+      0.0          2572869       1673     1537.9     1504.0      1344      2464        139.9  void cub::CUB_200200_700_800_860_890_900_NS::DeviceScanInitKernel<cub::CUB_200200_700_800_860_890_9…
+      0.0          2019905         24    84162.7    84061.0     83229     85213        477.8  turing_fp16_s1688gemm_fp16_128x256_ldg8_f2f_stages_32x1_tn                                          
+      0.0          1943007         24    80958.6    80637.0     79101     83709       1459.1  turing_s1688gemm_fp16_256x64_ldg8_stages_32x1_tn                                                    
+      0.0          1685541         48    35115.4    34798.5     15359     56287      19633.0  turing_fp16_s1688gemm_fp16_128x128_ldg8_f2f_stages_32x1_nn                                          
+      0.0           952227         21    45344.1    49054.0     18816     67326       9687.5  __myl_bb1_1_GatCasMeaSubMulMeaAddSqrDivMulCasMulAddCasMeaSubMulMeaAddSqrDivMulCasMulAdd             
+      0.0           928931        504     1843.1     1760.0      1407      3264        302.9  tensorrt_llm::kernels::computePaddingOffsets(int *, const int *, int)                               
+      0.0           772969         24    32207.0    32175.0     31903     32640        192.6  turing_fp16_s1688gemm_fp16_128x64_sliced1x2_ldg8_f2f_tn                                             
+      0.0           529903         21    25233.5    30431.0      6592     33023       8789.7  __myl_bb1_2_AddAddCasMeaSubMulMea_vec                                                               
+      0.0           444979         24    18540.8    18575.5     17920     19167        333.8  turing_s1688gemm_fp16_128x128_ldg8_stages_32x1_tn                                                   
+      0.0            77597         21     3695.1     3712.0      2912      4800        403.8  __myl_bb1_1_AddSqrDivMulCasMulAddSubGat                                                             
+      0.0            72543         42     1727.2     1664.0      1504      2784        233.0  void tensorrt_llm::kernels::scatterDecodingParamsKernel<float>(const T1 *, T1 *, const int *, int)  
+      0.0            45599         21     2171.4     2112.0      1920      3712        360.1  tensorrt_llm::runtime::kernels::<unnamed>::copyPackedInputToOutput(int *, const int *, const int *,…
+      0.0            42656         21     2031.2     1984.0      1760      3296        299.6  tensorrt_llm::layers::setTopPRuntimeArgs(int, int, int *, int, float, float *, int, bool *, const i…
+      0.0            41663         21     1984.0     1920.0      1760      3232        294.0  void tensorrt_llm::layers::setupTopKRuntimeArgs<(int)1024>(int, int, int *, int, float, float *, in…
+      0.0            41535         21     1977.9     1920.0      1728      3136        276.1  void tensorrt_llm::runtime::kernels::<unnamed>::tileTensor<int>(T1 *, const T1 *, unsigned int, uns…
+      0.0            36768         21     1750.9     1728.0      1568      2752        236.3  void tensorrt_llm::kernels::scatterDecodingParamsKernel<int>(const T1 *, T1 *, const int *, int)    
+      0.0            33854         21     1612.1     1568.0      1440      2528        217.2  tensorrt_llm::kernels::curandInitialize(curandStateXORWOW *, const int *, int, unsigned long)       
+
+Processing [report1.sqlite] with [/opt/nvidia/nsight-systems/2024.2.1/host-linux-x64/reports/cuda_gpu_mem_time_sum.py]... 
+
+ ** CUDA GPU MemOps Summary (by Time) (cuda_gpu_mem_time_sum):
+
+ Time (%)  Total Time (ns)  Count  Avg (ns)  Med (ns)  Min (ns)  Max (ns)   StdDev (ns)            Operation           
+ --------  ---------------  -----  --------  --------  --------  ---------  -----------  ------------------------------
+     96.9        350810309   1821  192647.1     704.0       448  349516808    8190533.8  [CUDA memcpy Host-to-Device]  
+      2.1          7620152   1350    5644.6    1312.0       448      18047       6509.3  [CUDA memset]                 
+      0.9          3218609   1694    1900.0    1856.0      1504       3424        181.1  [CUDA memcpy Device-to-Device]
+      0.1           292730    189    1548.8    1472.0      1343       2496        200.8  [CUDA memcpy Device-to-Host]  
+
+Processing [report1.sqlite] with [/opt/nvidia/nsight-systems/2024.2.1/host-linux-x64/reports/cuda_gpu_mem_size_sum.py]... 
+
+ ** CUDA GPU MemOps Summary (by Size) (cuda_gpu_mem_size_sum):
+
+ Total (MB)  Count  Avg (MB)  Med (MB)  Min (MB)  Max (MB)  StdDev (MB)            Operation           
+ ----------  -----  --------  --------  --------  --------  -----------  ------------------------------
+   1637.434   1821     0.899     0.003     0.000  1632.232       38.250  [CUDA memcpy Host-to-Device]  
+   1554.323   1350     1.151     0.000     0.000     3.781        1.584  [CUDA memset]                 
+      0.093   1694     0.000     0.000     0.000     0.004        0.000  [CUDA memcpy Device-to-Device]
+      0.023    189     0.000     0.000     0.000     0.003        0.000  [CUDA memcpy Device-to-Host]  
+
+Processing [report1.sqlite] with [/opt/nvidia/nsight-systems/2024.2.1/host-linux-x64/reports/openmp_sum.py]... 
+SKIPPED: report1.sqlite does not contain OpenMP event data.
+
+Processing [report1.sqlite] with [/opt/nvidia/nsight-systems/2024.2.1/host-linux-x64/reports/opengl_khr_range_sum.py]... 
+SKIPPED: report1.sqlite does not contain KHR Extension (KHR_DEBUG) data.
+
+Processing [report1.sqlite] with [/opt/nvidia/nsight-systems/2024.2.1/host-linux-x64/reports/opengl_khr_gpu_range_sum.py]... 
+SKIPPED: report1.sqlite does not contain GPU KHR Extension (KHR_DEBUG) data.
+
+Processing [report1.sqlite] with [/opt/nvidia/nsight-systems/2024.2.1/host-linux-x64/reports/vulkan_marker_sum.py]... 
+SKIPPED: report1.sqlite does not contain Vulkan Debug Extension (Vulkan Debug Util) data.
+
+Processing [report1.sqlite] with [/opt/nvidia/nsight-systems/2024.2.1/host-linux-x64/reports/vulkan_gpu_marker_sum.py]... 
+SKIPPED: report1.sqlite does not contain GPU Vulkan Debug Extension (GPU Vulkan Debug markers) data.
+
+Processing [report1.sqlite] with [/opt/nvidia/nsight-systems/2024.2.1/host-linux-x64/reports/dx11_pix_sum.py]... 
+SKIPPED: report1.sqlite does not contain DX11 CPU debug markers.
+
+Processing [report1.sqlite] with [/opt/nvidia/nsight-systems/2024.2.1/host-linux-x64/reports/dx12_gpu_marker_sum.py]... 
+SKIPPED: report1.sqlite does not contain DX12 GPU debug markers.
+
+Processing [report1.sqlite] with [/opt/nvidia/nsight-systems/2024.2.1/host-linux-x64/reports/dx12_pix_sum.py]... 
+SKIPPED: report1.sqlite does not contain DX12 CPU debug markers.
+
+Processing [report1.sqlite] with [/opt/nvidia/nsight-systems/2024.2.1/host-linux-x64/reports/wddm_queue_sum.py]... 
+SKIPPED: report1.sqlite does not contain WDDM context data.
+
+Processing [report1.sqlite] with [/opt/nvidia/nsight-systems/2024.2.1/host-linux-x64/reports/um_sum.py]... 
+SKIPPED: report1.sqlite does not contain CUDA Unified Memory CPU page faults data.
+
+Processing [report1.sqlite] with [/opt/nvidia/nsight-systems/2024.2.1/host-linux-x64/reports/um_total_sum.py]... 
+SKIPPED: report1.sqlite does not contain CUDA Unified Memory CPU page faults data.
+
+Processing [report1.sqlite] with [/opt/nvidia/nsight-systems/2024.2.1/host-linux-x64/reports/um_cpu_page_faults_sum.py]... 
+SKIPPED: report1.sqlite does not contain CUDA Unified Memory CPU page faults data.
+
+Processing [report1.sqlite] with [/opt/nvidia/nsight-systems/2024.2.1/host-linux-x64/reports/openacc_sum.py]... 
+SKIPPED: report1.sqlite does not contain OpenACC event data.
+
