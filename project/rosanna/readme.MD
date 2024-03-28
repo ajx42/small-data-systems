@@ -7,6 +7,7 @@ Follow these steps to set up your experiment environment on a cloud host.
 * Machine: `n1-standard-4`
 * Architecture: `Intel Broadwell`
 * IMP $\rightarrow$ Set boot disk image to: `Deep Learning VM for PyTorch 2.2 with CUDA 12.1 M119`. This image comes with a bunch of libraries pre-installed.
+* **IMP $\rightarrow$ Set bootdisk size to atleast 200 GB!**
 
 ### CloudLab
 * If you are using CloudLab, you will get a barebones machine.
