@@ -58,7 +58,7 @@ Follow these steps to set up your experiment environment on a cloud host.
     * Example, for the bloom summarisation workload, we can run this: 
     ```nsys profile -t cuda,nvtx --stats=true python3 ../summarize.py --test_trt_llm --hf_model_dir ./bloom/560M/ --data_type fp16 --engine_dir ./bloom/560M/trt_engines/fp16/1-gpu/```
     * This will generate a `<something>.nsys-rep` file.
-    * Use `nsys stats <something>.nsys-rep` to print to stdout a text summary of the stats. 
+    * Use `nsys stats <something>.nsys-rep` to print to stdout a text summary of the stats. Sample output is under the `project/data/` in this repo. 
     * You can copy this file to your local machine and dig deeper in the NSYS UI. More on this later.
 * NSight Compute
     * TODO: TBH I don't think we will be needing this one.
