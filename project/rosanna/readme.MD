@@ -23,6 +23,7 @@ Follow these steps to set up your experiment environment on a cloud host.
 * Run `setup-gc.sh`. This should install a bunch of dependencies like docker.
 
 ### Starting a new container
+* From within the `rosanna` directory:
 *  `docker compose up --force-recreate -d && docker logs -f -t rosanna-app-1`
 * The above will start up the container. It will take about 10 minutes for everything to be set up.
 * The last line of log will say `*** done, you can detach from logs ***`. Once this comes up, press `Ctrl+C` to detach from logging.
@@ -71,3 +72,11 @@ Follow these steps to set up your experiment environment on a cloud host.
 * Open NSight Systems UI in your PC. Open the report file in this tool. This will give you timelines, charts, and tables with a lot of data.
 
 ![image](../data/sample-nsys-ui.png)
+
+### Resources
+* Profiling: https://www.vi-hps.org/cms/upload/material/tw41/Nsight_Systems.pdf
+* Profiling: https://docs.olcf.ornl.gov/systems/summit_user_guide.html#profiling-gpu-code-with-nvidia-developer-tools
+* NSYS: https://developer.nvidia.com/nsight-systems
+* Google Cloud - SSHing into Instances (VMs):
+    * Install Cloud SDK: https://cloud.google.com/sdk/docs/install-sdk
+    * SSH from your terminal: https://cloud.google.com/compute/docs/connect/standard-ssh#gcloud
