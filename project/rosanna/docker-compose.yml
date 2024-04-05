@@ -24,10 +24,6 @@ services:
     entrypoint: ''
     environment:
       - NVIDIA_VISIBLE_DEVICES=all
-    devices:
-      - /dev/nvidiactl
-      - /dev/nvidia-uvm
-      - /dev/nvidia0
     volumes:
       - /usr/local/nvidia/lib:/usr/local/nvidia/lib
     ports:
