@@ -1,0 +1,10 @@
+BS,GPU,TP,PP,Iterations,CommKernelPct,CommKernelTime,PipeSeparatedKernels
+8,1,0,0,5,0,0,None
+32,2,2,0,5,13.7,2231655829,ncclDevKernel_AllReduce_Sum_f16_RING_LL|oneShotAllReduceKernel|ncclDevKernel_AllGather_RING_LL
+32,2,0,2,5,41.9,11039079806,ncclDevKernel_SendRecv
+32,3,0,3,5,52.7,20050599346,ncclDevKernel_SendRecv
+32,4,4,0,40,14.9,22632858146,oneShotAllReduceKernel|ncclDevKernel_AllReduce_Sum_f16_RING_LL|ncclDevKernel_AllGather_RING_LL|twoShotAllReduceKernel
+32,4,2,2,40,50.3,136161622639,ncclDevKernel_SendRecv|oneShotAllReduceKernel|ncclDevKernel_AllReduce_Sum_f16_RING_LL|ncclDevKernel_AllGather_RING_LL
+32,4,0,4,40,57.7,220641577954,ncclDevKernel_SendRecv
+64,4,4,0,20,15.9,20115992557,ncclDevKernel_AllReduce_Sum_f16_RING_LL|oneShotAllReduceKernel|ncclDevKernel_AllGather_RING_LL|twoShotAllReduceKernel
+64,4,2,2,20,49.9,109295272126,ncclDevKernel_SendRecv|ncclDevKernel_AllReduce_Sum_f16_RING_LL|oneShotAllReduceKernel|ncclDevKernel_AllGather_RING_LL
