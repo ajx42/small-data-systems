@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 import os
 
 def plot_util(filename, title, outfile):
+    plt.figure(figsize=(16, 9))
     ap = []
     pre_ts = 0
     with open(filename) as pp:
