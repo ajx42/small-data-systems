@@ -1,0 +1,4 @@
+     42.3     114576444257     129600   884077.5    12288.0      5312  255190728    9605360.2  ncclDevKernel_SendRecv(ncclDevComm *, unsigned long, ncclWork *)                                    
+      4.0      10733075691     769920    13940.5    12448.0      5024   20024998      33160.4  void tensorrt_llm::kernels::oneShotAllReduceKernel<__half, (int)2, (bool)1, (bool)0>(tensorrt_llm::…
+      3.7      10037017672       7680  1306903.3  1227001.5    890106   26660826     998799.1  ncclDevKernel_AllReduce_Sum_f16_RING_LL(ncclDevComm *, unsigned long, ncclWork *)                   
+      0.3        815085019      16200    50313.9    50208.0     17056     162239       4542.1  ncclDevKernel_AllGather_RING_LL(ncclDevComm *, unsigned long, ncclWork *)                           
